@@ -1,2 +1,4 @@
 # unit3project
- ## Leah Is Here...
+
+Group 1: Team Members
+Whitney
