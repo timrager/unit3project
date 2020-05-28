@@ -1,6 +1,6 @@
 # unit3project
 
-Group 1: Team Members
+Group 1: Team Members!
 * Whitney
 * Tim
 * Leah
