@@ -9,3 +9,6 @@ Group 1: Team Members!
 * Tim
 * Leah
 * Katie
+
+
+## Katie no longer has a broken git
