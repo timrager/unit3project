@@ -30,10 +30,10 @@ mongoose.connection.on('error', (error) => console.log(error.message));
 mongoose.connection.on('disconnected', () => console.log('mongo disconnected'));
 
 //=======================
-// CONTROLLER
+// ROUTER
 //=======================
-const oxygenController = require('./controllers/oxygen.js');
-app.use('/Oxygen', oxygenController);
+// const oxygenController = require('./controllers/oxygen.js');
+// app.use('/Oxygen', oxygenController);
 
 //=======================
 // LISTENING

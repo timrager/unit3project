@@ -5,7 +5,6 @@ class Header extends React.Component{
     render(){
 
         return(
-
             <header>
                 <h1> TEST </h1>
                 <div id="logo"></div>
@@ -13,10 +12,10 @@ class Header extends React.Component{
                 <div id="cart"></div>
                 <div id="hamburger"></div>
             </header>
-
         )
-    }
 
+    }
+    
 }
 
 module.exports = Header;
