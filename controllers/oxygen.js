@@ -8,5 +8,5 @@ const router = express.Router();
 
 // Index Route
 router.get('/', (req, res) => {
-    res.send()
+    res.send('Hello World!');
 })
