@@ -3,7 +3,7 @@
 //=======================
 const express = require('express');
 const mongoose = require('mongoose');
-//---- TO DO: REQUIRE CONTROLLER FILE
+const plantsController = require('./controllers/oxygen.js');
 
 //=======================
 // VARIABLES
@@ -18,7 +18,7 @@ const PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static('public'));
-//---- TO DO: APP.USE root route plus controller file variable
+app.use('/plants', plantsController);
 
 //=======================
 // MONGODB CONNECTION
