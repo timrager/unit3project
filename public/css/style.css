@@ -15,6 +15,9 @@ footer {
 
 .plant {
     border: 5px solid #a35103;
-    /* background-image: url(TO BE ADDED); */
+    /* background-image: url(TO BE ADDED); */  
+}
+
+.plant:hover {
     
 }
