@@ -1,0 +1,25 @@
+{
+  "name": "unit3project",
+  "version": "1.0.0",
+  "description": "Group 1: Team Members Whitney I like cheese I lurv da cheez",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timrager/unit3project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/timrager/unit3project/issues"
+  },
+  "homepage": "https://github.com/timrager/unit3project#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.9.16"
+  }
+}
