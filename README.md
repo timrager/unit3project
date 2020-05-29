@@ -1,10 +1,11 @@
 # unit3project
-## Leah Was Here...
+
 Group 1: Team Members
 Whitney
 I like cheese
 I lurv da cheez
 
+I have made the merge!!!!!
 Group 1: Team Members!
 * Whitney
 * Tim
