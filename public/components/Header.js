@@ -1,4 +1,3 @@
-const React = require('react')
 
 class Header extends React.Component{
 
@@ -19,4 +18,3 @@ class Header extends React.Component{
 
 }
 
-module.exports = Header;

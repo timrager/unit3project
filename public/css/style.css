@@ -1,0 +1,18 @@
+body {
+    background-color: #FCF4ED;
+    color: black
+}
+header {
+    background-color: #234154;
+    color: #96ACB5;
+}
+footer {
+    background-color: #234154;
+    color: #96ACB5;
+}
+.plant {
+    border: 5px solid #A35103;
+    /* background-image: url(TO BE ADDED); */
+}
+.plant:hover {
+}
