@@ -19,7 +19,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static('public'));
 app.use("/oxygen", plantsController)
-app.use('/plants', plantsController);
 
 //=======================
 // MONGODB CONNECTION
@@ -29,12 +28,6 @@ mongoose.connect(mongoURI, { useNewUrlParser: true }, () => {
 })
 mongoose.connection.on('error', (error) => console.log(error.message));
 mongoose.connection.on('disconnected', () => console.log('mongo disconnected'));
-
-//=======================
-// ROUTER
-//=======================
-// const oxygenController = require('./controllers/oxygen.js');
-// app.use('/Oxygen', oxygenController);
 
 //=======================
 // LISTENING
