@@ -1,4 +1,4 @@
-const React = require('react')
+
 
 class Footer extends React.Component {
     render () {
@@ -15,4 +15,3 @@ class Footer extends React.Component {
     }
 }
 
-module.exports = Footer;
