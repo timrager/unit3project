@@ -18,5 +18,3 @@ router.get('/', (req,res) => {
         res.json(foundPlants);
     })
 })
-
-module.exports = router;
