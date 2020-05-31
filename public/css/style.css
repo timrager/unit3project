@@ -6,10 +6,6 @@ header {
     background-color: #234154;
     color: #96ACB5;
 }
-footer {
-    background-color: #234154;
-    color: #96ACB5;
-}
 .plant {
     border: 5px solid #A35103;
     /* background-image: url(TO BE ADDED); */
@@ -18,3 +14,19 @@ footer {
     background-color: #fcf4ed;
     color: black
 }
+
+/* ============= */
+/* FOOTER STYLES */
+/* ============= */
+/* Footer div was given the className="footer" */
+
+.footer {
+    background-color: #234154;
+    color: #96ACB5;
+}
+
+/* Social Media Icons */
+a {
+    color: #96ACB5;
+}
+
