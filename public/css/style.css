@@ -62,10 +62,6 @@ a {
     justify-content: flex-end;
     align-items: baseline;
 }
-/* ============= */
-/* FOOTER STYLES */
-/* ============= */
-/* Footer div was given the className="footer" */
 
 .footer {
     background-color: #234154;
