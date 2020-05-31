@@ -3,16 +3,12 @@
 class Footer extends React.Component {
     render () {
         return (
-            <div>
-                <footer>
-                <h1>Finding my footing</h1>
-                {/* Images Coming Soon */}
-                <a href="#">Instagram</a>
-                <a href="#">Pintrest</a>
-                <a href="#">Facebook</a>
-                <a href="#">Twitter</a>
-                </footer>
-            </div>
+            <footer className="footer">
+                <a href="#"><i className="fab fa-facebook-square"></i></a>
+                <a href="#"><i className="fab fa-instagram-square"></i></a>
+                <a href="#"><i className="fab fa-pinterest-square"></i></a>
+                <a href="#"><i className="fab fa-twitter-square"></i></a>
+            </footer>
         )
     }
 }
