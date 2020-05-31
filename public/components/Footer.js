@@ -3,11 +3,11 @@
 class Footer extends React.Component {
     render () {
         return (
-            <div>
-                <a href="#">Instagram</a>
-                <a href="#">Pintrest</a>
-                <a href="#">Facebook</a>
-                <a href="#">Twitter</a>
+            <div className="footer">
+                <a href="#"><i className="fab fa-facebook-square"></i></a>
+                <a href="#"><i class="fab fa-instagram-square"></i></a>
+                <a href="#"><i class="fab fa-pinterest-square"></i></a>
+                <a href="#"><i class="fab fa-twitter-square"></i></a>
             </div>
         )
     }
