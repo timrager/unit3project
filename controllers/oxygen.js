@@ -39,6 +39,6 @@ router.put('/:id', (req, res) => {
     User.findByIdAndUpdate(req.params.id, req.body, (error, updatedUser) => {
         res.json(updatedUser);
     })
-})
+});
 
 module.exports = router;
