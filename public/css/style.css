@@ -9,19 +9,21 @@ header {
 footer {
     background-color: #234154;
     color: #96ACB5;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 .plant {
     border: 5px solid #A35103;
     /* background-image: url(TO BE ADDED); */
 }
-<<<<<<< HEAD
-
-/* .plant:hover {
-
-} */
-=======
 .plant:hover {
     background-color: #fcf4ed;
     color: black
 }
->>>>>>> 3f422d9ec8389c589a5172f9848cfa1df577dbbc
+
+.socialMedia {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
