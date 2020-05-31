@@ -12,6 +12,7 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    align-items: baseline;
 }
 .plant {
     border: 5px solid #A35103;
@@ -26,4 +27,5 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+    align-items: baseline;
 }
