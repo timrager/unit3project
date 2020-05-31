@@ -74,7 +74,6 @@ class App extends React.Component{
     render() {
         return(
             <div>
-                <h1>Testing...</h1>
                 <Header />
                     <form onSubmit={this.handleSignUp}>
                         <input type="text" id="email" value={this.state.email} onChange={this.handleFormInput} />
