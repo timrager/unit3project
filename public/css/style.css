@@ -18,7 +18,17 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    align-items: baseline;
+    align-items: center;
+}
+a {
+    color: #96ACB5;
+    text-decoration: none;
+}
+.buttonContainer {
+    float: right;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
 }
 .headerButton {
     background-color: #234154;
@@ -27,7 +37,8 @@ footer {
     padding: 1em 3em 1em 3em;
     display: flex;
     flex-direction: row;
-    justify-content: ;
+    justify-content: flex-end;
+    cursor: pointer;
 }
 .plant {
     border: 5px solid #A35103;
