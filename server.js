@@ -3,6 +3,8 @@
 //=======================
 const express = require('express');
 const mongoose = require('mongoose');
+const passport = require('./config/passport')();
+const userController = require('./controllers/user.js')
 const plantsController = require('./controllers/oxygen.js');
 
 //=======================
@@ -18,6 +20,8 @@ const PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static('public'));
+app.use(passport.initialize());
+app.use('/user', userController);
 app.use('/oxygen', plantsController)
 
 //=======================
