@@ -33,5 +33,6 @@
 ## Wireframing
 
 ## Visual Design
+![visual & color design](./public/images/visual_colordesign.pdf)
 
 ## Challenges / Future Goals
