@@ -23,7 +23,7 @@ class App extends React.Component{
             }
         }).then(response => response.json())
             .then(newUser => {
-                localStorage.token = newUser.data.token;
+                //localStorage.token = newUser.data.token;
                 this.setState({
                     email: '',
                     password: '',
@@ -56,11 +56,10 @@ class App extends React.Component{
             }
         }).then(response => response.json())
             .then(loggedInUser => {
-                localStorage.token = loggedInUser.data.token
+                //localStorage.token = loggedInUser.data.token
                 this.setState({
                     isLoggedIn: true
                 })
-                console.log('loggedin')
             })
     }
 
@@ -80,7 +79,7 @@ class App extends React.Component{
                         <input type="password" id="password" value={this.state.password} onChange={this.handleFormInput} />
                         <input type="submit"/>
                     </form>
-                    
+
                     <form onSubmit={this.handleLoginIn}>
                         <input type="text" id="email" value={this.state.email} onChange={this.handleFormInput} />
                         <input type="password" id="password" value={this.state.password} onChange={this.handleFormInput} />
