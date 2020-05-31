@@ -22,8 +22,9 @@ class App extends React.Component{
                 'Content-Type': 'application/json'
             }
         }).then(response => response.json())
-            .then(newUser => {
-                //localStorage.token = newUser.data.token;
+            .then(response => {
+                localStorage.setItem("token", response.token)
+                // localStorage.token = response.data.token;
                 this.setState({
                     email: '',
                     password: '',
@@ -55,7 +56,8 @@ class App extends React.Component{
                 'Content-Type': 'application/json'
             }
         }).then(response => response.json())
-            .then(loggedInUser => {
+            .then(response => {
+                localStorage.setItem("token", response.token)
                 //localStorage.token = loggedInUser.data.token
                 this.setState({
                     isLoggedIn: true
