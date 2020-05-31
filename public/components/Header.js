@@ -5,11 +5,10 @@ class Header extends React.Component{
 
         return(
             <header>
-                <h1> TEST HEADER </h1>
-                <div id="logo"></div>
-                <div id="avatar"></div>
-                <div id="cart"></div>
-                <div id="hamburger"></div>
+                <div id="logo" className="headerButton">Oxygen</div>
+                <button id="avatar" className="headerButton">Profile</button>
+                <button id="cart" className="headerButton">Cart</button>
+                <button id="hamburger" className="headerButton">Menu</button>
             </header>
         )
 

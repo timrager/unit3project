@@ -1,3 +1,6 @@
+* {
+    margin: 0em;
+}
 body {
     background-color: #FCF4ED;
     color: black
@@ -5,6 +8,9 @@ body {
 header {
     background-color: #234154;
     color: #96ACB5;
+    display: flex;
+    flex-direction: row;
+    
 }
 footer {
     background-color: #234154;
@@ -13,6 +19,12 @@ footer {
     flex-direction: row;
     justify-content: space-around;
     align-items: baseline;
+}
+.headerButton {
+    background-color: #234154;
+    color: #96ACB5;
+    border: 2px solid #96ACB5;
+    padding: 3em;
 }
 .plant {
     border: 5px solid #A35103;
