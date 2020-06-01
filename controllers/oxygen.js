@@ -236,7 +236,7 @@ router.post('/', (req, res) => {
 
 // DESTROY
 router.delete('/:id', (req, res) => {
-    Plants.find({}, (error, deletedPlant) => {
+    Plants.find(req.params.id, (error, deletedPlant) => {
         res.json(deletedPlant);
         console.log('deleted plants')
     })

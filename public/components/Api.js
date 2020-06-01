@@ -33,7 +33,7 @@ class Api extends React.Component {
                     {this.state.plants.length > 0 && this.state.plants.map((plant, index) => {
                     return <li>
                         {plant.name}
-                        <image src={plant.image}></image>
+                        <img src={plant.image}/>
                         <button onClick={() => this.remove(plant._id, index)}>Delete</button>
                         </li>
                     })}
