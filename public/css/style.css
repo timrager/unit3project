@@ -47,6 +47,7 @@ a {
 }
 
 .plant {
+    padding: 8em;
     border: 5px solid #A35103;
     /* background-image: url(TO BE ADDED); */
 }
@@ -54,6 +55,10 @@ a {
 .plant:hover {
     background-color: #fcf4ed;
     color: black
+}
+
+#pet {
+    /* background-image: image(../images/calathea_homescreen.jpg); */
 }
 
 .socialMedia {
