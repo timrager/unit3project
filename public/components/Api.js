@@ -1,3 +1,4 @@
+// import seedImages from '../../models/seedImages';
 
 class Api extends React.Component {
     state = {
@@ -27,12 +28,12 @@ class Api extends React.Component {
     render() {
         return(
             <div>
-                <h1>My To Do List</h1>
+                <h1>Plants</h1>
                 <ul>
                     {this.state.plants.length > 0 && this.state.plants.map((plant, index) => {
                     return <li>
-                        {plant.name} 
-                        <image src={`${plant.image}`}></image>
+                        {plant.category === "Low Maintenance" ? plant.name : ''} 
+                        {/* <image src={`${seedImages}/${plant.name}.jpg`}></image> */}
                         <button onClick={() => this.remove(plant._id, index)}>Delete</button>
                         </li>
                     })}
