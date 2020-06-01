@@ -7,7 +7,15 @@ const mongoose = require('mongoose');
 // PLANTS SCHEMA
 //=======================
 const plantsSchema = new mongoose.Schema({
-    name: String
+    name: String,
+    category: String,
+    image: String,
+    size: String,
+    petFriendly: Boolean,
+    plantCare: {
+        water: String,
+        sun: String
+    }
 });
 
 //=======================
