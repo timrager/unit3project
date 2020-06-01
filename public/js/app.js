@@ -88,6 +88,7 @@ class App extends React.Component{
                     </form>
                 <Api />
                 {/* <Catcard /> */}
+                <CatCard />
                 <Footer />
             </div>
         )
