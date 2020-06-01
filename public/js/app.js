@@ -86,8 +86,7 @@ class App extends React.Component{
                         <input type="password" id="password" value={this.state.password} onChange={this.handleFormInput} />
                         <input type="submit"/>
                     </form>
-                <Plant />
-                {/* <Catcard /> */}
+                <CatCard />
                 <Footer />
             </div>
         )
