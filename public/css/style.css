@@ -47,6 +47,7 @@ a {
 }
 
 .plant {
+    padding: 8em;
     border: 5px solid #A35103;
     /* background-image: url(TO BE ADDED); */
 }
@@ -56,16 +57,16 @@ a {
     color: black
 }
 
+#pet {
+    /* background-image: image(../images/calathea_homescreen.jpg); */
+}
+
 .socialMedia {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     align-items: baseline;
 }
-/* ============= */
-/* FOOTER STYLES */
-/* ============= */
-/* Footer div was given the className="footer" */
 
 .footer {
     background-color: #234154;
