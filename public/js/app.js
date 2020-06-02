@@ -87,7 +87,6 @@ class App extends React.Component{
                         <input type="submit"/>
                     </form>
                 <Api />
-                {/* <Catcard /> */}
                 <CatCard />
                 <Footer />
             </div>

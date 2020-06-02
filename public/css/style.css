@@ -21,6 +21,7 @@ footer {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    height: 20vh;
 }
 
 a {
@@ -28,11 +29,24 @@ a {
     text-decoration: none;
 }
 
+h1 {
+    color: #A35103;
+    justify-content: center;
+    
+}
+
+#logo {
+    display: flex;
+    align-content: stretch;
+    width: 90%;
+    align-items: baseline;
+}
+
 .buttonContainer {
-    float: right;
+    /* float: right; */
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: right;
 }
 
 .headerButton {
@@ -46,8 +60,25 @@ a {
     cursor: pointer;
 }
 
+.plantBox {
+    display: flex;
+    justify-content: center;
+}
+
+.plantMenu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: relative;
+    width: 30vw;
+    color: black;
+    font-size: 4vw;
+    font-weight: bold;
+}
+
 .plant {
-    padding: 8em;
+    padding: 8vh;
     border: 5px solid #A35103;
     /* background-image: url(TO BE ADDED); */
 }
