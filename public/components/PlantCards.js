@@ -1,23 +1,29 @@
 class Plant extends React.Component {
 
     state = {
-        name: String,
-        category: String,
-        type: String,
-        image: String,
-        size: String,
-        petFriendly: Boolean,
-        plantCare: {
-            water: String,
-            sun: String
-        }
+        plant: [],
+
+        // name: String,
+        // category: String,
+        // type: String,
+        // image: String,
+        // size: String,
+        // petFriendly: Boolean,
+        // plantCare: {
+        //     water: String,
+        //     sun: String
+        // }
     }
+
+    router.get('/', (req, res) => {
+        onClick()plants.find({ category: })
+    })
 
     render() {
 
         return(
             <div className="plantContainer">
-                <button className={this.props.something}></button>
+                <button {this.state.props.name}></button>
             </div>
         )
     }
