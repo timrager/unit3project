@@ -21,6 +21,7 @@ footer {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    height: 20vh;
 }
 
 a {
@@ -70,12 +71,14 @@ h1 {
     flex-wrap: wrap;
     justify-content: center;
     height: relative;
-    width: 15em;
-
+    width: 30vw;
+    color: black;
+    font-size: 4vw;
+    font-weight: bold;
 }
 
 .plant {
-    padding: 8em;
+    padding: 8vh;
     border: 5px solid #A35103;
     /* background-image: url(TO BE ADDED); */
 }
