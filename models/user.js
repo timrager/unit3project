@@ -15,7 +15,12 @@ const userSchema = new mongoose.Schema({
     shippingState: String,
     shippingZip: Number,
     creditCard: Number,
-    shoppingCart: []
+    shoppingCart: [
+        {
+            qty: Number,
+            id: String
+        }
+    ]
 });
 
 //=======================
