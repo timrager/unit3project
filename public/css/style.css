@@ -46,6 +46,14 @@ a {
     cursor: pointer;
 }
 
+.plantMenu {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: relative;
+    width: 15em;
+}
+
 .plant {
     padding: 8em;
     border: 5px solid #A35103;
