@@ -27,7 +27,7 @@ class Api extends React.Component {
 
     render() {
         return(
-            <div>
+            <div className="plantBox">
                 <h1>Plants</h1>
                 <ul>
                     {this.state.plants.length > 0 && this.state.plants.map((plant, index) => {
