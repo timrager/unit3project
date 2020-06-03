@@ -8,8 +8,6 @@ class Header extends React.Component{
         } else {
            welcomeUser = (<button id="avatar" className="headerButton">Log In</button>)
         }
-        const {plants} = this.props;
-        console.log(plants);
 
         return(
             <header>
