@@ -15,9 +15,10 @@ const userSchema = new mongoose.Schema({
     shippingState: String,
     shippingZip: Number,
     creditCard: Number,
-    shoppingCart: [
+    faveList: [
         {
-            qty: Number,
+            name: String,
+            image: String,
             id: String
         }
     ]
