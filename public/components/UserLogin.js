@@ -4,9 +4,12 @@ class UserLogin extends React.Component {
     return(
         <div className="userLoginForm">
             <form onSubmit={handleLogIn}>
-                <input type="text" id="email" value={email} onChange={handleFormInput} />
-                <input type="password" id="password" value={password} onChange={handleFormInput} />
-                <input type="submit"/>
+                <h2>Login</h2>
+                <label htmlFor="email">Email</label>
+                    <input type="text" id="email" value={email} onChange={handleFormInput} />
+                <label htmlFor="password">Password</label>
+                    <input type="password" id="password" value={password} onChange={handleFormInput} />
+                    <input type="submit"/>
             </form>
         </div>
     )
