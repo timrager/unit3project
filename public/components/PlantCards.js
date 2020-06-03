@@ -15,7 +15,15 @@ class Plant extends React.Component {
         // }
     }
 
-    
+    // router.get('/', (req, res) => {
+    //     onClick()plants.find({ category: succulent }, (err, foundPlants) => {
+    //         res.json(foundPlants);
+    //     })
+    // })
+
+    getData = (event) => {
+        fetch('/')
+    }
 
     render() {
 
