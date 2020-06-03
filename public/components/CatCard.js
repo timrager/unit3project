@@ -1,8 +1,4 @@
 class CatCard extends React.Component {
-    state = {
-        plants: []
-    }
-
     render () {
         return (
             <div className="plantBox">
