@@ -6,7 +6,7 @@ class App extends React.Component{
         password: '',
         isLoggedIn: false
     }
-
+    
     handleSignUp = (event) => {
         event.preventDefault();
 
