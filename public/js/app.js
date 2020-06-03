@@ -154,7 +154,6 @@ class App extends React.Component{
                         return ( <Sample2 user={this.state}/> ) }} 
                     />
 
-
                 </BrowserRouter>
                     {/* <UserLogin 
                         email={this.state.email}
