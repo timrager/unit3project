@@ -1,15 +1,28 @@
 class NewUser extends React.Component {
+    // state = {
+    //     user: 
+    // }
+    
+    // handleFormInput = (event) => {
+    //     this.setState({
+    //         [event.target.id]: event.target.value
+    //     })
+    // }
+
     render() {
-        const { 
-            handleSignUp, 
-            handleFormInput, 
-            password, 
-            email,
-            name,
-            shippingStreet,
-            shippingCity,
-            shippingZip
-        } = this.props;
+        // const { 
+        //     handleSignUp, 
+        //     handleFormInput, 
+        //     } = this.props;
+        // const {
+        //     password, 
+        //     email,
+        //     name,
+        //     shippingStreet,
+        //     shippingCity,
+        //     shippingZip
+        //     } = this.props.user;
+        console.log(this.props)
     return(
         <div className="newUserForm">
             <form onSubmit={handleSignUp}>
@@ -32,3 +45,4 @@ class NewUser extends React.Component {
     )
     }
 }
+

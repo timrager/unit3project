@@ -10,7 +10,12 @@ router.post('/signup', (req, res) => {
     if (req.body.email && req.body.password) {
         let newUser = {
             email: req.body.email,
-            password: req.body.password
+            password: req.body.password,
+            name: req.body.name,
+            shippingStreet: req.body.shippingStreet,
+            shippingCity: req.body.shippingCity,
+            shippingState: req.body.shippingState,
+            shippingZip: req.body.shippingZip,
         }
         User.findOne({email: req.body.email})
             .then((user) => {
@@ -44,11 +49,12 @@ router.post('/login', (req, res) => {
         if (user) {
             if (user.password === req.body.password) {
                 var payload = {
-                    id: user.id
+                    id: user.id,
                 }
                 var token = jwt.encode(payload, config.jwtSecret)
                 res.json({
-                    token: token
+                    token: token,
+                    user: user
                 })
             } else {
                 res.sendStatus(401)
@@ -60,6 +66,9 @@ router.post('/login', (req, res) => {
     } else {
         res.sendStatus(401)
     }
+    User.findOne({email: req.body.email}, (err, user) => {
+        console.log(user);
+    })
 })
 
 module.exports = router;
