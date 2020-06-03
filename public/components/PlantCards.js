@@ -15,15 +15,13 @@ class Plant extends React.Component {
         // }
     }
 
-    router.get('/', (req, res) => {
-        onClick()plants.find({ category: })
-    })
+    
 
     render() {
 
         return(
             <div className="plantContainer">
-                <button {this.state.props.name}></button>
+                <button ></button>
             </div>
         )
     }
