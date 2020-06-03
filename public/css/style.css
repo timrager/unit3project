@@ -92,6 +92,21 @@ h1 {
     /* background-image: image(../images/calathea_homescreen.jpg); */
 }
 
+/*=================================
+****** LOGIN / CREATE PROFILE FORMS
+==================================*/
+
+.userLoginForm {
+    background-color: #fcf4ed;
+    float: right;
+    z-index: 0;
+}
+
+
+/*=================================
+****** FOOTER
+==================================*/
+
 .socialMedia {
     display: flex;
     flex-direction: row;
