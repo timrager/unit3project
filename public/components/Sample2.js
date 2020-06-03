@@ -1,5 +1,5 @@
 
-class Sample1 extends React.Component{
+class Sample2 extends React.Component{
 
     render(){
 
@@ -7,7 +7,7 @@ class Sample1 extends React.Component{
         console.log(user)
         console.log(this.props)
         return(
-            <h1>Look at Console Log - Sample1</h1>
+            <h1>Look at Console Log - Sample2!</h1>
         )
     }
 }

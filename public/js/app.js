@@ -1,5 +1,5 @@
 // import { BrowserRouter, Route, Link } from "react-router-dom";
-const { BrowserRouter, Link, Route } = ReactRouterDOM;
+const { BrowserRouter, Link, Route, Switch } = ReactRouterDOM;
 
 class App extends React.Component{
 
@@ -141,11 +141,20 @@ class App extends React.Component{
             <div>
                 <Header user={this.state}/>
                 <BrowserRouter>
+
                     <nav><Link to ="/testme">TestLink</Link></nav>
                     <Route path="/testme" 
                     render={(props) => { 
                         return ( <Sample1 user={this.state}/> ) }} 
                     />
+                    
+                    <nav><Link to ="/testme2">TestLink</Link></nav>
+                    <Route path="/testme2" 
+                    render={(props) => { 
+                        return ( <Sample2 user={this.state}/> ) }} 
+                    />
+
+
                 </BrowserRouter>
                     {/* <UserLogin 
                         email={this.state.email}
