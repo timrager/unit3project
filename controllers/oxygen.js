@@ -227,6 +227,12 @@ router.get('/', (req,res) => {
 //     res.send('Hello World')
 // });
 
+// router.get('/', (req, res) => {
+//     plants.find({ category: succulent }, (err, foundPlants) => {
+//         res.json(foundPlants);
+//     })
+// })
+
 // POST
 router.post('/', (req, res) => {
     User.create(req.body, (error, createdUser) => {
