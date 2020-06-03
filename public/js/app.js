@@ -1,5 +1,4 @@
 
-
 class App extends React.Component{
 
     state = {
@@ -60,9 +59,13 @@ class App extends React.Component{
                 localStorage.setItem("token", response.token)
                 //localStorage.token = loggedInUser.data.token
                 this.setState({
-                    isLoggedIn: true
+                    isLoggedIn: true,
+                    email: '',
+                    password: ''
                 })
             })
+        
+        
     }
 
     handleFormInput = (event) => {
@@ -72,20 +75,43 @@ class App extends React.Component{
     }
 
     render() {
+        let showForm;
+        if (this.state.isLoggedIn) {
+            showForm = (
+                <UserLogin 
+                    email={this.state.email}
+                    password={this.state.password}
+                    handleLogIn={this.state.handleLogIn}
+                    handleFormInput={this.state.handleFormInput}
+                />
+            )
+        } else {
+            showForm = (
+                <NewUser
+                    email={this.state.email}
+                    password={this.state.password}
+                    handleFormInput={this.handleFormInput}
+                    handleSignUp={this.handleSignUp}
+                />
+            )
+        } 
         return(
             <div>
                 <Header />
-                    <form onSubmit={this.handleSignUp}>
-                        <input type="text" id="email" value={this.state.email} onChange={this.handleFormInput} />
-                        <input type="password" id="password" value={this.state.password} onChange={this.handleFormInput} />
-                        <input type="submit"/>
-                    </form>
-
-                    <form onSubmit={this.handleLoginIn}>
-                        <input type="text" id="email" value={this.state.email} onChange={this.handleFormInput} />
-                        <input type="password" id="password" value={this.state.password} onChange={this.handleFormInput} />
-                        <input type="submit"/>
-                    </form>
+                    {showForm}
+                    {/* <NewUser
+                        email={this.state.email}
+                        password={this.state.password}
+                        handleFormInput={this.handleFormInput}
+                        handleSignUp={this.handleSignUp}
+                    /> */}
+                    
+                    {/* <UserLogin 
+                        email={this.state.email}
+                        password={this.state.password}
+                        handleLogIn={this.state.handleLogIn}
+                        handleFormInput={this.state.handleFormInput}
+                    /> */}
                 <Api />
                 <CatCard image="https://www.thespruce.com/thmb/qrWRABcI6K_plsLUn2cX8WS_-QE=/2358x1613/filters:fill(auto,1)/kararileysempervivum-18-crop-565dd32562e34681a627e2de84f691e1.jpg" category="Low Maintenance" info="" />
                 <CatCard image="https://www.almanac.com/sites/default/files/styles/opengraph/public/image_nodes/african-violet-houseplant.jpg?itok=qiMZjFZs" category="Air Purifying" info="" />
