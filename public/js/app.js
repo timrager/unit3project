@@ -141,8 +141,8 @@ class App extends React.Component{
                     <UserLogin 
                         email={this.state.email}
                         password={this.state.password}
-                        handleLogIn={this.state.handleLogIn}
-                        handleFormInput={this.state.handleFormInput}
+                        handleLogIn={this.handleLogIn}
+                        handleFormInput={this.handleFormInput}
                     />
                     
                     <NewUser
