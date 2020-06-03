@@ -31,8 +31,19 @@
 - Future Consideration: As a user I can flag my favorite plants to be stored in my profile for easy access
 
 ## Wireframing
+### Main Index View:
+![Main Index View](./images/Index_View.png)
+
+### Category-Filtered Product View:
+![Category Product Page](./images/Filtered_View.png)
+
+### Individual Product View:
+![Main Index View](./images/Product_View.png)
+
+### User Profile & Cart View:
+![Main Index View](./images/profile_page.png)
 
 ## Visual Design
-![visual & color design](./public/images/visual_colordesign.pdf)
+![visual & color design](./images/visual_colordesign.pdf)
 
 ## Challenges / Future Goals

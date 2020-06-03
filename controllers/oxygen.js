@@ -15,7 +15,7 @@ const User = require('../models/user.js');
 //=======================
 // GET
 router.get('/', (req,res) => {
-    Plants.find({}, (err, foundPlants) => {
+    Plants.find( {}, (err, foundPlants) => {
         res.json(foundPlants);
     })
 })
