@@ -5,16 +5,10 @@ class Header extends React.Component{
     render(){
         let welcomeUser;
         if (this.props.user.isLoggedIn) {
-           welcomeUser = (<button id="avatar" className="headerButton"><Link to="/user/profile"> Welcome back, {this.props.user.name}!</Link></button>)
+           welcomeUser = (<button id="avatar" className="headerButton"><Link to="/userprofile"> Welcome back, {this.props.user.name}!</Link></button>)
         } else {
-           welcomeUser = (<button id="avatar" className="headerButton"><Link to="/user/login">Log In</Link></button>)
+           welcomeUser = (<button id="avatar" className="headerButton"><Link to="/login">Log In</Link></button>)
         }
-
-        // if (this.props.user.isLoggedIn) {
-        //     welcomeUser = (<button id="avatar" className="headerButton">Welcome back, {this.props.user.name}!</button>)
-        //  } else {
-        //     welcomeUser = (<button id="avatar" className="headerButton">Log In</button>)
-        //  }
 
         return(
             <header>
