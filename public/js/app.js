@@ -110,40 +110,43 @@ class App extends React.Component{
     }
 
     render() {
-        console.log(this.state.user);
         return(
             <div>
                 <BrowserRouter>
-                    <nav>
-                        <Link to ="/testme">TestLink</Link>
+                    {/* <nav>
                         <Link to="/low-maintenance">Low Maintenance</Link>
                         {plantCat.map((plantCat) => {
                             return (
                             <Link to={`/${plantCat}`}>{plantCat}</Link>
                             )
                         })}
-                    </nav>
+                    </nav> */}
+                    {this.state.user &&
+                    <Header user={this.state.user}/>
+                    }
                     <Switch>
+                        <Route path="/login"
+                            render={() => {
+                                return <UserLogin user={this.state.user}/>
+                            }}
+                        />
 
-                        <Route path="/testme" 
-                            render={(props) => { 
-                                return ( <Sample1 user={this.state}/> ) }} 
-                            />
-                            {this.state.plants.length > 0 && plantCat.map((catName) => {
-                                let plantData = this.state.plants.filter((plant) => {
-                                    let currentCat = plant.category.toLowerCase().replace(/\s/g, '-')
-                                    return currentCat === catName 
-                                })
-                                return (
-                                    <Route path={`/${catName}`} 
-                                    render={(props) => {
-                                        return (
-                                            <PlantCategory plantData={plantData}  />
-                                        )
-                                    }}
-                                    />
-                                )
-                            })}
+                        {this.state.plants.length > 0 && plantCat.map((catName) => {
+                            let plantData = this.state.plants.filter((plant) => {
+                                let currentCat = plant.category.toLowerCase().replace(/\s/g, '-')
+                                return currentCat === catName 
+                            })
+                            return (
+                                <Route path={`/${catName}`} 
+                                render={(props) => {
+                                    return (
+                                        <PlantCategory plantData={plantData}  />
+                                    )
+                                }}
+                                />
+                            )
+                        })}
+
                         <Route path="/"
                             render={() => {
                                 return <Home plantCat={plantCat}/>
@@ -172,7 +175,6 @@ class App extends React.Component{
                     /> */}
                 {/* <Plant />
                 <Show /> */}
-                <Footer />
             </div>
         )
     }
