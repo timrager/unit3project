@@ -46,7 +46,6 @@ class App extends React.Component{
         }).then(response => response.json())
             .then(response => {
                 localStorage.setItem("token", response.token)
-                // localStorage.token = response.data.token;
                 this.setState({
                     user: {
                         isLoggedIn: true,
@@ -90,7 +89,6 @@ class App extends React.Component{
         }).then(response => response.json())
             .then(response => {
                 localStorage.setItem("token", response.token)
-                //localStorage.token = loggedInUser.data.token
                 this.setState({
                     user: {
                         isLoggedIn: true,
