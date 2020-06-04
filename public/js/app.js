@@ -26,7 +26,6 @@ class App extends React.Component{
     }
     
     handleSignUp = (event) => {
-        event.preventDefault();
 
         fetch('/user/signup', {
             body: JSON.stringify({
@@ -73,13 +72,12 @@ class App extends React.Component{
         localStorage.clear();
     }
 
-    handleLogIn = (event) => {
-        event.preventDefault();
+    handleLogIn = ({email, password}) => {
 
         fetch('/user/login', {
             body: JSON.stringify({
-                email: this.state.user.email,
-                password: this.state.user.password,
+                email: email,
+                password: password,
             }),
             method: "POST",
             headers: {
@@ -123,11 +121,20 @@ class App extends React.Component{
                     <Header user={this.state.user}/>
                     }
                     <Switch>
-                        <Route path="/login"
+                        {this.state.user &&
+                        <Route path='/login'
                             render={() => {
-                                return <UserLogin user={this.state.user}/>
+                                return <UserLogin user={this.state.user} handleLogIn={this.handleLogIn}/>
                             }}
                         />
+                        }
+
+                        {this.state.user && <Route path='/newuser' 
+                            render={() => {
+                                return <NewUser handleSignUp={this.handleSignUp}/>
+                        }}
+                        />
+                        }
 
                         {this.state.plants.length > 0 && plantCat.map((catName) => {
                             let plantData = this.state.plants.filter((plant) => {
@@ -145,6 +152,14 @@ class App extends React.Component{
                             )
                         })}
 
+                        <Route path="/:id"
+                            render={(props) => {
+                                return (
+                                    <Show />
+                                )
+                            }}
+                             />
+
                         <Route path="/"
                             render={() => {
                                 return <Home plantCat={plantCat}/>
@@ -153,26 +168,6 @@ class App extends React.Component{
                     </Switch>
                     <Footer />
                 </BrowserRouter>
-                    {/* <UserLogin 
-                        email={this.state.user.email}
-                        password={this.state.user.password}
-                        handleLogIn={this.handleLogIn}
-                        handleFormInput={this.handleFormInput}
-                    />
-                    
-                    <NewUser
-                        name={this.state.user.name}
-                        email={this.state.user.email}
-                        password={this.state.user.password}
-                        shippingStreet={this.state.user.shippingStreet}
-                        shippingCity={this.state.user.shippingCity}
-                        shippingState={this.state.user.shippingState}
-                        shippingZip={this.state.user.shippingZip}
-                        handleFormInput={this.handleFormInput}
-                        handleSignUp={this.handleSignUp}
-                    /> */}
-                {/* <Plant />
-                <Show /> */}
             </div>
         )
     }
