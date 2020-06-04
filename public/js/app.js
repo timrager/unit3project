@@ -162,26 +162,7 @@ class App extends React.Component{
                     </Switch>
                     <Footer />
                 </BrowserRouter>
-                    {/* <UserLogin 
-                        email={this.state.user.email}
-                        password={this.state.user.password}
-                        handleLogIn={this.handleLogIn}
-                        handleFormInput={this.handleFormInput}
-                    />
-                    
-                    <NewUser
-                        name={this.state.user.name}
-                        email={this.state.user.email}
-                        password={this.state.user.password}
-                        shippingStreet={this.state.user.shippingStreet}
-                        shippingCity={this.state.user.shippingCity}
-                        shippingState={this.state.user.shippingState}
-                        shippingZip={this.state.user.shippingZip}
-                        handleFormInput={this.handleFormInput}
-                        handleSignUp={this.handleSignUp}
-                    /> */}
-                {/* <Plant />
-                <Show /> */}
+                {/*<Show /> */}
             </div>
         )
     }
