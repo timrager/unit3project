@@ -1,5 +1,11 @@
 // import { BrowserRouter, Route, Link } from "react-router-dom";
+<<<<<<< HEAD
 const { BrowserRouter, Link, Route, Switch } = ReactRouterDOM;
+=======
+const { BrowserRouter, Link, Switch, Route } = ReactRouterDOM;
+
+const plantCat = ['low-maintenance', 'pet-friendly', 'mood-booster', 'air-purifying'];
+>>>>>>> a36f0946986b0dc8afde2a9eea61a2bdd06a7e31
 
 class App extends React.Component{
 
@@ -22,7 +28,7 @@ class App extends React.Component{
             .then(response => response.json())
             .then(data => this.setState({ plants: data }))
     }
-
+    
     handleSignUp = (event) => {
         event.preventDefault();
 
@@ -113,19 +119,43 @@ class App extends React.Component{
             <div>
                 <Header user={this.state}/>
                 <BrowserRouter>
+                    <nav>
+                        <Link to ="/testme">TestLink</Link>
+                        <Link to="/low-maintenance">Low Maintenance</Link>
+                        {plantCat.map((plantCat) => {
+                            return (
+                            <Link to={`/${plantCat}`}>{plantCat}</Link>
+                            )
+                        })}
+                    </nav>
+                    <Switch>
 
-                    <nav><Link to ="/testme">TestLink</Link></nav>
-                    <Route path="/testme" 
-                    render={(props) => { 
-                        return ( <Sample1 user={this.state}/> ) }} 
-                    />
-                    
-                    <nav><Link to ="/testme2">TestLink</Link></nav>
-                    <Route path="/testme2" 
-                    render={(props) => { 
-                        return ( <Sample2 user={this.state}/> ) }} 
-                    />
-
+                        <Route path="/testme" 
+                            render={(props) => { 
+                                return ( <Sample1 user={this.state}/> ) }} 
+                            />
+                            {this.state.plants.length > 0 && plantCat.map((catName) => {
+                                let plantData = this.state.plants.filter((plant) => {
+                                    let currentCat = plant.category.toLowerCase().replace(/\s/g, '-')
+                                    return currentCat === catName 
+                                })
+                                return (
+                                    <Route path={`/${catName}`} 
+                                    render={(props) => {
+                                        return (
+                                            <PlantCategory plantData={plantData}  />
+                                        )
+                                    }}
+                                    />
+                                )
+                            })}
+                        <Route path="/"
+                            render={() => {
+                                return <Home plantCat={plantCat}/>
+                            }}
+                        />
+                    </Switch>
+                    <Footer />
                 </BrowserRouter>
                     {/* <UserLogin 
                         email={this.state.user.email}
@@ -148,7 +178,7 @@ class App extends React.Component{
                 {/* <Api /> */}
                 {/* <Plant />
                 <Show /> */}
-                <CatCard 
+                {/* <CatCard 
                     image="https://www.thespruce.com/thmb/qrWRABcI6K_plsLUn2cX8WS_-QE=/2358x1613/filters:fill(auto,1)/kararileysempervivum-18-crop-565dd32562e34681a627e2de84f691e1.jpg" 
                     category="Low Maintenance" 
                     info="Don't feel like you have a green thumb? This category of plants is designed for the first time plant owner, or the human that would like to have some plants in their life, but may have not had good luck keeping previous plant babies alive in the past." 
@@ -168,7 +198,7 @@ class App extends React.Component{
                     category="Mood Boosting" 
                     info="If cabin fever is giving you the blues, pick a plant from this category and let the good vibes flow." 
                 />
-                <Footer />
+                <Footer /> */}
             </div>
         )
     }
