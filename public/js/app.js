@@ -74,13 +74,12 @@ class App extends React.Component{
         localStorage.clear();
     }
 
-    handleLogIn = (event) => {
-        event.preventDefault();
+    handleLogIn = ({email, password}) => {
 
         fetch('/user/login', {
             body: JSON.stringify({
-                email: this.state.user.email,
-                password: this.state.user.password,
+                email: email,
+                password: password,
             }),
             method: "POST",
             headers: {
@@ -125,11 +124,13 @@ class App extends React.Component{
                     <Header user={this.state.user}/>
                     }
                     <Switch>
-                        <Route path="/login"
+                        {this.state.user &&
+                        <Route path='/login'
                             render={() => {
-                                return <UserLogin user={this.state.user}/>
+                                return <UserLogin user={this.state.user} handleLogIn={this.handleLogIn}/>
                             }}
                         />
+                        }
 
                         {this.state.plants.length > 0 && plantCat.map((catName) => {
                             let plantData = this.state.plants.filter((plant) => {

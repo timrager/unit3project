@@ -1,26 +1,40 @@
 class UserLogin extends React.Component {
     state = {
-        name: this.props.user.name,
-        email: this.props.user.email,
-        password: this.props.user.password
+        email: '',
+        password: ''
     }
     
-    handleFormInput = (event) => {
+    updateEmail = (event) => {
         this.setState({
-            [event.target.id]: event.target.value
+            email: event.target.value
+        })
+    }
+
+    updatePassword = (event) => {
+        this.setState({
+            password: event.target.value
+        })
+    }
+
+    logIn = (event) => {
+        event.preventDefault();
+        this.props.handleLogIn(this.state);
+        this.setState({
+            email: '',
+            password: ''
         })
     }
     
     render() {
-        const { handleLogIn, handleFormInput, password, email } = this.props;
+        const {email, password, isLoggedIn} = this.props.user 
     return(
         <div className="userLoginForm">
-            <form onSubmit={handleLogIn}>
+            <form onSubmit={this.logIn}>
                 <h2>Login</h2>
                 <label htmlFor="email">Email</label>
-                    <input type="text" id="email" value={this.state.email} onChange={this.handleFormInput} />
+                    <input type="text" id="email" value={this.state.email} onChange={this.updateEmail} />
                 <label htmlFor="password">Password</label>
-                    <input type="password" id="password" value={this.state.password} onChange={this.handleFormInput} />
+                    <input type="password" id="password" value={this.state.password} onChange={this.updatePassword} />
                     <input type="submit"/>
             </form>
         </div>

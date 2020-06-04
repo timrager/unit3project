@@ -7,17 +7,17 @@ const mongoose = require('../models/user.js')
 const User = mongoose.model('User');
 
 router.post('/signup', (req, res) => {
-    if (req.body.email && req.body.password) {
+    if (req.body.user.email && req.body.user.password) {
         let newUser = {
-            email: req.body.email,
-            password: req.body.password,
-            name: req.body.name,
-            shippingStreet: req.body.shippingStreet,
-            shippingCity: req.body.shippingCity,
-            shippingState: req.body.shippingState,
-            shippingZip: req.body.shippingZip,
+            email: req.body.user.email,
+            password: req.body.user.password,
+            name: req.body.user.name,
+            shippingStreet: req.body.user.shippingStreet,
+            shippingCity: req.body.user.shippingCity,
+            shippingState: req.body.user.shippingState,
+            shippingZip: req.body.user.shippingZip,
         }
-        User.findOne({email: req.body.email})
+        User.findOne({email: req.body.user.email})
             .then((user) => {
                 if (!user) {
                     User.create(newUser)
