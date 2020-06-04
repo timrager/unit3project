@@ -1,6 +1,8 @@
 // import { BrowserRouter, Route, Link } from "react-router-dom";
 const { BrowserRouter, Link, Switch, Route } = ReactRouterDOM;
 
+const plantCat = ['low-maintenance', 'pet-friendly', 'mood-booster', 'air-purifying'];
+
 class App extends React.Component{
 
     state = {
@@ -113,43 +115,43 @@ class App extends React.Component{
             <div>
                 <Header user={this.state}/>
                 <BrowserRouter>
-                    <nav><Link to ="/testme">TestLink</Link></nav>
+                    <nav>
+                        <Link to ="/testme">TestLink</Link>
+                        <Link to="/low-maintenance">Low Maintenance</Link>
+                        {plantCat.map((plantCat) => {
+                            return (
+                            <Link to={`/${plantCat}`}>{plantCat}</Link>
+                            )
+                        })}
+                    </nav>
                     <Switch>
+
                         <Route path="/testme" 
-                        render={(props) => { 
-                            return ( <Sample1 user={this.state}/> ) }} 
-                        />
-                        {/* Default or Homepage */}
+                            render={(props) => { 
+                                return ( <Sample1 user={this.state}/> ) }} 
+                            />
+                            {this.state.plants.length > 0 && plantCat.map((catName) => {
+                                let plantData = this.state.plants.filter((plant) => {
+                                    let currentCat = plant.category.toLowerCase().replace(/\s/g, '-')
+                                    return currentCat === catName 
+                                })
+                                return (
+                                    <Route path={`/${catName}`} 
+                                    render={(props) => {
+                                        return (
+                                            <PlantCategory plantData={plantData}  />
+                                        )
+                                    }}
+                                    />
+                                )
+                            })}
                         <Route path="/"
                             render={() => {
-                                return (
-                                    <div>
-                                        <CatCard 
-                                            image="https://www.thespruce.com/thmb/qrWRABcI6K_plsLUn2cX8WS_-QE=/2358x1613/filters:fill(auto,1)/kararileysempervivum-18-crop-565dd32562e34681a627e2de84f691e1.jpg" 
-                                            category="Low Maintenance" 
-                                            info="Don't feel like you have a green thumb? This category of plants is designed for the first time plant owner, or the human that would like to have some plants in their life, but may have not had good luck keeping previous plant babies alive in the past." 
-                                        />
-                                        <CatCard 
-                                            image="https://www.almanac.com/sites/default/files/styles/opengraph/public/image_nodes/african-violet-houseplant.jpg?itok=qiMZjFZs" 
-                                            category="Air Purifying" 
-                                            info="These plants are great for purifying your home and office. If you feel as though your space has become musty and stale, then this category of plant is for you!" 
-                                        />
-                                        <CatCard 
-                                            image="https://www.jacksonandperkins.com/images/xxl/27677.jpg" 
-                                            category="Pet Loving" 
-                                            info="No more worries about which plants are safe for your furry family members. This plant category is all safe for plants to nom on." 
-                                        />
-                                        <CatCard 
-                                            image="https://cdn.shopify.com/s/files/1/0059/8835/2052/products/Pygmy_Date_Palm_450_1_grande.jpg?v=1549683425" 
-                                            category="Mood Boosting" 
-                                            info="If cabin fever is giving you the blues, pick a plant from this category and let the good vibes flow." 
-                                        />
-                                        <Footer />
-                                    </div>
-                                )
-                            }} 
+                                return <Home plantCat={plantCat}/>
+                            }}
                         />
                     </Switch>
+                    <Footer />
                 </BrowserRouter>
                     {/* <UserLogin 
                         email={this.state.user.email}
@@ -172,7 +174,7 @@ class App extends React.Component{
                 {/* <Api /> */}
                 {/* <Plant />
                 <Show /> */}
-                <CatCard 
+                {/* <CatCard 
                     image="https://www.thespruce.com/thmb/qrWRABcI6K_plsLUn2cX8WS_-QE=/2358x1613/filters:fill(auto,1)/kararileysempervivum-18-crop-565dd32562e34681a627e2de84f691e1.jpg" 
                     category="Low Maintenance" 
                     info="Don't feel like you have a green thumb? This category of plants is designed for the first time plant owner, or the human that would like to have some plants in their life, but may have not had good luck keeping previous plant babies alive in the past." 
@@ -192,7 +194,7 @@ class App extends React.Component{
                     category="Mood Boosting" 
                     info="If cabin fever is giving you the blues, pick a plant from this category and let the good vibes flow." 
                 />
-                <Footer />
+                <Footer /> */}
             </div>
         )
     }
