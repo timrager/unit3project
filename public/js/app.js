@@ -1,7 +1,26 @@
 // import { BrowserRouter, Route, Link } from "react-router-dom";
 const { BrowserRouter, Link, Switch, Route } = ReactRouterDOM;
 
-const plantCat = ['low-maintenance', 'pet-friendly', 'mood-booster', 'air-purifying'];
+// const plantCat = ['low-maintenance', 'pet-friendly', 'mood-booster', 'air-purifying'];
+
+const plantCat = [
+    {
+        category: 'low-maintenance',
+        image: 'https://cdn.shopify.com/s/files/1/0013/3529/6118/products/Lechuza-Color-35-White_3bbba3d9-a492-43f2-b2f2-e95ed97bd8d0.jpg?v=1544499885'
+    },
+    {
+        category: 'pet-friendly',
+        image: 'https://www.almanac.com/sites/default/files/styles/opengraph/public/image_nodes/african-violet-houseplant.jpg?itok=qiMZjFZs'
+    },
+    {
+        category: 'mood-booster',
+        image: 'https://thomsonslandscaping.com/wp-content/uploads/1947-1.jpg'
+    },
+    {
+        category: 'air-purifying',
+        image: 'https://images-na.ssl-images-amazon.com/images/I/61gpcJHlfIL._AC_SX466_.jpg'
+    }
+]
 
 class App extends React.Component{
 
@@ -139,10 +158,10 @@ class App extends React.Component{
                         {this.state.plants.length > 0 && plantCat.map((catName) => {
                             let plantData = this.state.plants.filter((plant) => {
                                 let currentCat = plant.category.toLowerCase().replace(/\s/g, '-')
-                                return currentCat === catName 
+                                return currentCat === catName.category
                             })
                             return (
-                                <Route path={`/${catName}`} 
+                                <Route path={`/${catName.category}`} 
                                 render={(props) => {
                                     return (
                                         <PlantCategory plantData={plantData}  />
@@ -158,11 +177,11 @@ class App extends React.Component{
                                     <Show />
                                 )
                             }}
-                             />
+                        />
 
                         <Route path="/"
                             render={() => {
-                                return <Home plantCat={plantCat}/>
+                                return <Home plantCat={plantCat} />
                             }}
                         />
                     </Switch>
