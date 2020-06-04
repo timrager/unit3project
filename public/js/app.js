@@ -1,11 +1,7 @@
 // import { BrowserRouter, Route, Link } from "react-router-dom";
-<<<<<<< HEAD
-const { BrowserRouter, Link, Route, Switch } = ReactRouterDOM;
-=======
 const { BrowserRouter, Link, Switch, Route } = ReactRouterDOM;
 
 const plantCat = ['low-maintenance', 'pet-friendly', 'mood-booster', 'air-purifying'];
->>>>>>> a36f0946986b0dc8afde2a9eea61a2bdd06a7e31
 
 class App extends React.Component{
 
