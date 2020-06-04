@@ -2,7 +2,7 @@
 
 class Api extends React.Component {
     state = {
-        plants: [],
+        plants: []
     }
 
     componentDidMount() {
@@ -14,7 +14,7 @@ class Api extends React.Component {
             .then(response => response.json())
             .then(data => this.setState({ plants: data }))
     }
-
+    
     remove = (id, index) => {
         fetch(`/oxygen/${id}`, {
             method: "DELETE"
