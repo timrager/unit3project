@@ -170,7 +170,6 @@ class App extends React.Component{
                     </Switch>
                     <Footer />
                 </BrowserRouter>
-                {/*<Show /> */}
             </div>
         )
     }
