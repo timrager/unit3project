@@ -16,6 +16,7 @@ class Header extends React.Component{
                 <div className="buttonContainer">
                     {welcomeUser}
                     <button id="cart" className="headerButton">Cart</button>
+                    <button id="home" className="headerButton"><Link to="/">Home</Link></button>
                     <button id="hamburger" className="headerButton">Menu</button>
                 </div>
             </header>
