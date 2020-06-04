@@ -26,8 +26,8 @@ class UserLogin extends React.Component {
     }
     
     render() {
-        const {email, password, isLoggedIn} = this.props.user 
-    return(
+
+        return(
         <div className="userLoginForm">
             <form onSubmit={this.logIn}>
                 <h2>Login</h2>
@@ -37,7 +37,9 @@ class UserLogin extends React.Component {
                     <input type="password" id="password" value={this.state.password} onChange={this.updatePassword} />
                     <input type="submit"/>
             </form>
+            <button id="createUserProfile"><Link to="/newuser">New to Oxygen? Create a Profile</Link></button>
         </div>
     )
     }
 }
+

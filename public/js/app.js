@@ -26,7 +26,6 @@ class App extends React.Component{
     }
     
     handleSignUp = (event) => {
-        event.preventDefault();
 
         fetch('/user/signup', {
             body: JSON.stringify({
@@ -129,6 +128,13 @@ class App extends React.Component{
                             render={() => {
                                 return <UserLogin user={this.state.user} handleLogIn={this.handleLogIn}/>
                             }}
+                        />
+                        }
+
+                        {this.state.user && <Route path='/newuser' 
+                            render={() => {
+                                return <NewUser handleSignUp={this.handleSignUp}/>
+                        }}
                         />
                         }
 
