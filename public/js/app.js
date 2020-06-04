@@ -149,7 +149,7 @@ class App extends React.Component{
 
                         <Route path="/"
                             render={() => {
-                                return <Home plantCat={plantCat}/>
+                                return <Home plantCat={plantCat} />
                             }}
                         />
                     </Switch>
