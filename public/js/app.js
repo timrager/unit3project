@@ -154,6 +154,14 @@ class App extends React.Component{
                             )
                         })}
 
+                        <Route path="/:id"
+                            render={(props) => {
+                                return (
+                                    <Show />
+                                )
+                            }}
+                             />
+
                         <Route path="/"
                             render={() => {
                                 return <Home plantCat={plantCat}/>
