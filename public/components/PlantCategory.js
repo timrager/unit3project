@@ -1,6 +1,7 @@
 
 class PlantCategory extends React.Component {
     render () {
+        console.log(this.props.user)
         return (
             <div className="plantCat">
                 {this.props.plantData.map((plant) => {
