@@ -29,7 +29,8 @@ class App extends React.Component{
             name: '',
             email: '',
             password: '',
-            isLoggedIn: false
+            isLoggedIn: false,
+            faveList: []
         },
         plants: []
     }
@@ -66,16 +67,7 @@ class App extends React.Component{
                 localStorage.setItem("token", response.token)
                 // localStorage.token = response.data.token;
                 this.setState({
-                    user: {
-                        isLoggedIn: true,
-                        name: '',
-                        email: '',
-                        password: '',
-                        shippingStreet: '',
-                        shippingCity: '',
-                        shippingState: '',
-                        shippingZip: '',
-                    }
+                    user: response.user
                 })
             })
         }
@@ -111,12 +103,17 @@ class App extends React.Component{
                 this.setState({
                     user: {
                         isLoggedIn: true,
-                        email: '',
-                        password: ''
+                        shoppingCart: response.user.shoppingCart,
+                        email: response.user.email,
+                        password: response.user.password,
+                        name: response.user.name,
+                        shippingStreet: response.user.shippingStreet,
+                        shippingCity: response.user.shippingCity,
+                        shippingState: response.user.shippingState,
+                        shippingZip: response.user.shippingZip
                     }
                 })
             })
-        
         
     }
 
@@ -150,7 +147,7 @@ class App extends React.Component{
                         />
                         }
 
-                        {this.state.user && <Route path='/newuser' 
+                        {this.state.user && <Route path='/user/signup' 
                             render={() => {
                                 return <NewUser handleSignUp={this.handleSignUp}/>
                         }}
@@ -166,26 +163,26 @@ class App extends React.Component{
                                 <Route path={`/${catName.category}`} 
                                 render={(props) => {
                                     return (
-                                        <PlantCategory plantData={plantData}  />
+                                        <PlantCategory props={this.state} />
                                     )
                                 }}
                                 />
                             )
                         })}
 
-                        <Route path="/:id"
-                            render={(props) => {
+                        {this.state.user && <Route path="/:id"
+                            render={() => {
                                 return (
-                                    <Show />
+                                    <Show user={this.state.user}/>
                                 )
                             }}
-                        />
+                        />}
 
-                        <Route path="/"
+                        {this.state.user && <Route path="/"
                             render={() => {
-                                return <Home plantCat={plantCat} />
+                                return <Home plantCat={plantCat} user={this.state.user}/>
                             }}
-                        />
+                        />}
                     </Switch>
                     <Footer />
                 </BrowserRouter>

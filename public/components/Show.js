@@ -1,5 +1,6 @@
 class Show extends React.Component {
     render () {
+        console.log(this.props.user.faveList);
         return (
             <div>
                 <div id="image-div">

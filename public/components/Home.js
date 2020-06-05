@@ -3,7 +3,7 @@ class Home extends React.Component {
         return (
             <div>
                 {this.props.plantCat.map((card) => {
-                    return <CatCard card={card} />
+                    return <CatCard card={card} user={this.props.user}/>
                 })}
             </div>
         )
