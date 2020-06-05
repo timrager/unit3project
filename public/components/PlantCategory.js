@@ -12,8 +12,6 @@ class PlantCategory extends React.Component {
                         <p>{plant.plantCare.sun}</p>
                         </div>
                         )
-                        // Need a show route in App
-                    // Add a component here to show current item
                 })}
             </div>
         )

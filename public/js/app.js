@@ -120,14 +120,6 @@ class App extends React.Component{
         return(
             <div>
                 <BrowserRouter>
-                    {/* <nav>
-                        <Link to="/low-maintenance">Low Maintenance</Link>
-                        {plantCat.map((plantCat) => {
-                            return (
-                            <Link to={`/${plantCat}`}>{plantCat}</Link>
-                            )
-                        })}
-                    </nav> */}
                     {this.state.user &&
                     <Header user={this.state.user}/>
                     }
