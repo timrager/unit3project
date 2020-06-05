@@ -42,41 +42,33 @@ class App extends React.Component{
             .then(data => this.setState({ plants: data }))
     }
     
-    handleSignUp = (event) => {
-
+    handleSignUp = (info) => {
         fetch('/user/signup', {
-            body: JSON.stringify({
-                name: this.state.user.name,
-                email: this.state.user.email,
-                password: this.state.user.password,
-                shippingStreet: this.state.user.shippingStreet,
-                shippingCity: this.state.user.shippingCity,
-                shippingState: this.state.user.shippingState,
-                shippingZip: this.state.user.shippingZip,
-            }),
+            body: JSON.stringify(
+                info
+            ),
             method: "POST",
             headers: {
                 'Accept': 'application/json, text/plain, */*',
                 'Content-Type': 'application/json'
             }
-        }).then(response => response.json())
-            .then(response => {
-                localStorage.setItem("token", response.token)
-                // localStorage.token = response.data.token;
-                this.setState({
-                    user: {
-                        isLoggedIn: true,
-                        name: '',
-                        email: '',
-                        password: '',
-                        shippingStreet: '',
-                        shippingCity: '',
-                        shippingState: '',
-                        shippingZip: '',
-                    }
-                })
+        }).then(response => {
+            localStorage.setItem("token", response.token)
+            // localStorage.token = response.data.token;
+            this.setState({
+                user: {
+                    isLoggedIn: true,
+                    name: '',
+                    email: '',
+                    password: '',
+                    shippingStreet: '',
+                    shippingCity: '',
+                    shippingState: '',
+                    shippingZip: '',
+                }
             })
-        }
+        })
+    }
 
     handleLogOut = () => {
         this.setState({

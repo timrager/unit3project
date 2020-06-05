@@ -37,6 +37,12 @@ mongoose.connection.on('disconnected', () => console.log('mongo disconnected'));
 //=======================
 // LISTENING
 //=======================
+
+// function to negating the need to go to homepage to refresh page
+app.get('*', (req, res) => { // This wildcard method handles all requests
+    res.sendFile(__dirname + '/public/index.html');
+});
+
 app.listen(PORT, () => {
     console.log(`Listening on port: ${PORT}`);
 })
