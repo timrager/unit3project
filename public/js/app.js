@@ -28,7 +28,7 @@ class App extends React.Component{
             email: '',
             password: '',
             isLoggedIn: false,
-            faveList: []
+            shoppingCart: []
         },
         plants: []
     }
