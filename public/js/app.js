@@ -1,8 +1,6 @@
 // import { BrowserRouter, Route, Link } from "react-router-dom";
 const { BrowserRouter, Link, Switch, Route } = ReactRouterDOM;
 
-// const plantCat = ['low-maintenance', 'pet-friendly', 'mood-booster', 'air-purifying'];
-
 const plantCat = [
     {
         category: 'low-maintenance',
@@ -157,6 +155,14 @@ class App extends React.Component{
                         />
                         }
 
+                        <Route path="/userProfile"
+                            render={(props) => {
+                                return (
+                                    <UserProfile userData={this.state.user} />
+                                )
+                            }}
+                        />
+
                         {this.state.plants.length > 0 && plantCat.map((catName) => {
                             let plantData = this.state.plants.filter((plant) => {
                                 let currentCat = plant.category.toLowerCase().replace(/\s/g, '-')
@@ -176,7 +182,7 @@ class App extends React.Component{
                         <Route path="/:id"
                             render={(props) => {
                                 return (
-                                    <Show />
+                                    <Show plantData={this.state.plants} />
                                 )
                             }}
                         />

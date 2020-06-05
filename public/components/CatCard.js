@@ -1,4 +1,3 @@
-
 class CatCard extends React.Component {
     render () {
         const {category, image} = this.props.card;
