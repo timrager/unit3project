@@ -44,6 +44,6 @@
 ![Main Index View](/public/images/profile_page.png)
 
 ## Visual Design
-![visual & color design](/public/images/visual_colordesign.pdf)
+![visual & color design](/public/images/visualDesign.png)
 
 ## Challenges / Future Goals
