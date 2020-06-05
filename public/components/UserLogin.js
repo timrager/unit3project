@@ -37,7 +37,7 @@ class UserLogin extends React.Component {
                     <input type="password" id="password" value={this.state.password} onChange={this.updatePassword} />
                     <input type="submit"/>
             </form>
-            <button id="createUserProfile"><Link to="/newuser">New to Oxygen? Create a Profile</Link></button>
+            <button id="createUserProfile"><Link to="/user/signup">New to Oxygen? Create a Profile</Link></button>
         </div>
     )
     }
