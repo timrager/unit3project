@@ -13,9 +13,6 @@ class PlantCategory extends React.Component {
                 shoppingCart: [...newItem, ...this.state.user.shoppingCart]
             }
         })
-        console.log(`User State: ${this.state.user}`);
-        console.log(`shoppingCart: ${this.state.user.shoppingCart}`);
-
     }
     
     

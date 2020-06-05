@@ -1,6 +1,5 @@
 class UserProfile extends React.Component {
     render () {
-        console.log(this.props);
         const {name, email, shippingStreet, shippingCity, shippingState, shippingZip} = this.props.userData;
         return (
             <div>
