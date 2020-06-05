@@ -117,17 +117,14 @@ h1 {
     color: black
 }
 
-#pet {
-    /* background-image: image(../images/calathea_homescreen.jpg); */
-}
 
 /*=================================
 ****** LOGIN / CREATE PROFILE FORMS
 ==================================*/
 
 .userLoginForm {
-    background-color: #A35103;
-    color: #96ACB5;
+    background-color: #96ACB5;
+    color: #A35103;
 }
 
 .userLoginForm > form {
