@@ -1,4 +1,3 @@
-// import { BrowserRouter, Route, Link } from "react-router-dom";
 const { BrowserRouter, Link, Switch, Route } = ReactRouterDOM;
 
 const plantCat = [
@@ -163,7 +162,7 @@ class App extends React.Component{
                                 <Route path={`/${catName.category}`} 
                                 render={(props) => {
                                     return (
-                                        <PlantCategory plantData={plantData} user={this.state.user}/>
+                                        <PlantCategory plantData={plantData} user={this.state.user}  />
                                     )
                                 }}
                                 />

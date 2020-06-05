@@ -30,8 +30,6 @@ class PlantCategory extends React.Component {
                         <button onClick={() => this.addToCart(plant)}>Add to Cart!</button>
                         </div>
                         )
-                        // Need a show route in App
-                    // Add a component here to show current item
                 })}
             </div>
         )
