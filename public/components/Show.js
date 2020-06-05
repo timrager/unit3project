@@ -4,7 +4,7 @@ class Show extends React.Component {
         console.log(this.props.singlePlant.image);
         return (
             <div>
-                <div id="image-div">
+                <div className="plantImage">
                     <img src={this.props.singlePlant.image} />
                 </div>
                 <div id="info-div">

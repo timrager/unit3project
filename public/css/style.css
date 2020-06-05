@@ -115,15 +115,10 @@ h1 {
 }
 
 
-.plant {
-    padding: 8vh;
-    border: 5px solid #A35103;
-    /* background-image: url(TO BE ADDED); */
-}
-
-.plant:hover {
-    background-color: #fcf4ed;
-    color: black
+#image-div {
+    float: left;
+    width: 50%;
+    size: 50px;
 }
 
 

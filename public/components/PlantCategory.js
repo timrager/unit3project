@@ -5,9 +5,9 @@ class PlantCategory extends React.Component {
             <div className="plantCat">
                 {this.props.plantData.map((plant) => {
                     return (
-                        <div>
+                        <div className="plantBox">
                         <h1>{plant.name}</h1>
-                        <Link to={`/${plant._id}`}plant={plant} ><img className="plantMenu" src={plant.image} /></Link>
+                        <Link to={`/${plant._id}`}plant={plant} ><img className="plantImage" src={plant.image} /></Link>
                         <p>{plant.plantCare.water}</p>
                         <p>{plant.plantCare.sun}</p>
                         </div>
