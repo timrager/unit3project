@@ -169,7 +169,7 @@ class App extends React.Component{
                                 <Route path={`/${catName.category}`} 
                                 render={(props) => {
                                     return (
-                                        <PlantCategory props={this.state} />
+                                        <PlantCategory props={plantData} />
                                     )
                                 }}
                                 />
