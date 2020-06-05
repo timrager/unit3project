@@ -179,13 +179,20 @@ class App extends React.Component{
                             )
                         })}
 
-                        <Route path="/:id"
-                            render={(props) => {
-                                return (
-                                    <Show plantData={this.state.plants} />
-                                )
-                            }}
-                        />
+                        {this.state.plants.length > 0 &&
+                            <Route path={`/:id`}
+                                render={(props) => {
+                                    let id = location.pathname
+                                    let newId = id.replace('/', '')
+                                    let singlePlant = this.state.plants.find((plant) => {             
+                                        return plant._id === newId;
+                                    })
+                                    return (
+                                        <Show singlePlant={singlePlant} />
+                                    )
+                                }}
+                            />
+                        }
 
                         <Route path="/"
                             render={() => {

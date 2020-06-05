@@ -16,7 +16,7 @@ class UserProfile extends React.Component {
                 </div>
                 <div id="cart">
                     <h3>Shopping Cart</h3>
-                    <ul>
+                    {/* <ul>
                         {
                             this.props.userData.shoppingCart.map((item) => {
                                 return (
@@ -28,7 +28,7 @@ class UserProfile extends React.Component {
                                 )
                             })
                         }
-                    </ul>
+                    </ul> */}
                 </div>
             </div>
         )

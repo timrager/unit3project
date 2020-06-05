@@ -7,7 +7,7 @@ class PlantCategory extends React.Component {
                     return (
                         <div>
                         <h1>{plant.name}</h1>
-                        <Link to={`/${this.props._id}`} ><img className="plantMenu" src={plant.image} /></Link>
+                        <Link to={`/${plant._id}`}plant={plant} ><img className="plantMenu" src={plant.image} /></Link>
                         <p>{plant.plantCare.water}</p>
                         <p>{plant.plantCare.sun}</p>
                         </div>
