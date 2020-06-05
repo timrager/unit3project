@@ -2,7 +2,6 @@ const plants = [
     {
         name: "Burro's Tail",
         category: 'Low Maintenance',
-        type: 'succulent',
         image: 'https://cdn.shopify.com/s/files/1/2198/4603/files/IMG_4268_1024x1024.JPG?v=1563762901',
         size: '3 feet',
         petFriendly: false,
@@ -14,7 +13,6 @@ const plants = [
     {
         name: 'Hens-and-Chicks',
         category: 'Low Maintenance',
-        type: 'succulent',
         image: 'https://www.thespruce.com/thmb/qrWRABcI6K_plsLUn2cX8WS_-QE=/2358x1613/filters:fill(auto,1)/kararileysempervivum-18-crop-565dd32562e34681a627e2de84f691e1.jpg',
         size: '.5 feet',
         petFriendly: false,
