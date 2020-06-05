@@ -1,5 +1,6 @@
 class Show extends React.Component {
     render () {
+        // console.log(this.props.user.shoppingCart);
         // const {name, image, plantCare, size, type} = this.props.singlePlant;
         console.log(this.props.singlePlant.image);
         return (

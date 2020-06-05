@@ -28,7 +28,8 @@ router.post('/signup', (req, res) => {
                                 }
                                 var token = jwt.encode(payload, config.jwtSecret)
                                 res.json({
-                                    token: token
+                                    token: token,
+                                    user: user
                                 })
                             } else {
                                 res.sendStatus(401)
@@ -66,9 +67,6 @@ router.post('/login', (req, res) => {
     } else {
         res.sendStatus(401)
     }
-    User.findOne({email: req.body.email}, (err, user) => {
-        console.log(user);
-    })
 })
 
 module.exports = router;
