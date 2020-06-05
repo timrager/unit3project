@@ -1,8 +1,6 @@
 // import { BrowserRouter, Route, Link } from "react-router-dom";
 const { BrowserRouter, Link, Switch, Route } = ReactRouterDOM;
 
-// const plantCat = ['low-maintenance', 'pet-friendly', 'mood-booster', 'air-purifying'];
-
 const plantCat = [
     {
         category: 'low-maintenance',
@@ -154,6 +152,14 @@ class App extends React.Component{
                         />
                         }
 
+                        <Route path="/userProfile"
+                            render={(props) => {
+                                return (
+                                    <UserProfile userData={this.state.user} />
+                                )
+                            }}
+                        />
+
                         {this.state.plants.length > 0 && plantCat.map((catName) => {
                             let plantData = this.state.plants.filter((plant) => {
                                 let currentCat = plant.category.toLowerCase().replace(/\s/g, '-')
@@ -170,13 +176,20 @@ class App extends React.Component{
                             )
                         })}
 
-                        {this.state.user && <Route path="/:id"
-                            render={() => {
-                                return (
-                                    <Show user={this.state.user}/>
-                                )
-                            }}
-                        />}
+                        {this.state.plants.length > 0 &&
+                            <Route path={`/:id`}
+                                render={(props) => {
+                                    let id = location.pathname
+                                    let newId = id.replace('/', '')
+                                    let singlePlant = this.state.plants.find((plant) => {             
+                                        return plant._id === newId;
+                                    })
+                                    return (
+                                        <Show singlePlant={singlePlant} />
+                                    )
+                                }}
+                            />
+                        }
 
                         {this.state.user && <Route path="/"
                             render={() => {
