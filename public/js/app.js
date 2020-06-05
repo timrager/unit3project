@@ -1,4 +1,3 @@
-// import { BrowserRouter, Route, Link } from "react-router-dom";
 const { BrowserRouter, Link, Switch, Route } = ReactRouterDOM;
 
 const plantCat = [
