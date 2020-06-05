@@ -11,7 +11,12 @@ background - #FCF4ED;
 
 body {
     background-color: #FCF4ED;
-    color: black
+    color: black;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 header {
@@ -45,7 +50,7 @@ h1 {
 #logo {
     display: flex;
     align-content: stretch;
-    width: 90%;
+    width: 90vw;
     align-items: baseline;
 }
 
@@ -70,11 +75,17 @@ h1 {
 .plantBox {
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #A35103;
+    border: 5px solid #234154;
+    width: 50vw;
+    margin: 10px;
 }
 
 .plantMenu {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     height: relative;
@@ -82,6 +93,7 @@ h1 {
     color: black;
     font-size: 4vw;
     font-weight: bold;
+    
 }
 
 
