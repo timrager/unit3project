@@ -14,7 +14,6 @@ const userSchema = new mongoose.Schema({
     shippingCity: String,
     shippingState: String,
     shippingZip: Number,
-    creditCard: Number,
     faveList: [
         {
             name: String,

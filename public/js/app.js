@@ -24,14 +24,31 @@ const plantCat = [
 
 class App extends React.Component{
 
+    // state = {
+    //     user: {
+    //         name: '',
+    //         email: '',
+    //         password: '',
+    //         shippingStreet: '',
+    //         shippingCity: '',
+    //         shippingState: '',
+    //         shippingZip: '',
+    //         faveList: [],
+    //         isLoggedIn: false
+    //     },
+    //     plants: []
+    // }
     state = {
-        user: {
             name: '',
             email: '',
             password: '',
-            isLoggedIn: false
-        },
-        plants: []
+            shippingStreet: '',
+            shippingCity: '',
+            shippingState: '',
+            shippingZip: '',
+            faveList: [],
+            isLoggedIn: false,
+            plants: []
     }
 
     componentDidMount() {
@@ -45,16 +62,17 @@ class App extends React.Component{
     }
     
     handleSignUp = (event) => {
-
+        event.preventDefault();
+        
         fetch('/user/signup', {
             body: JSON.stringify({
-                name: this.state.user.name,
-                email: this.state.user.email,
-                password: this.state.user.password,
-                shippingStreet: this.state.user.shippingStreet,
-                shippingCity: this.state.user.shippingCity,
-                shippingState: this.state.user.shippingState,
-                shippingZip: this.state.user.shippingZip,
+                name: this.state.name,
+                email: this.state.email,
+                password: this.state.password,
+                shippingStreet: this.state.shippingStreet,
+                shippingCity: this.state.shippingCity,
+                shippingState: this.state.shippingState,
+                shippingZip: this.state.shippingZip,
             }),
             method: "POST",
             headers: {
@@ -65,7 +83,6 @@ class App extends React.Component{
             .then(response => {
                 localStorage.setItem("token", response.token)
                 this.setState({
-                    user: {
                         isLoggedIn: true,
                         name: '',
                         email: '',
@@ -74,19 +91,17 @@ class App extends React.Component{
                         shippingCity: '',
                         shippingState: '',
                         shippingZip: '',
-                    }
+                        faveList: []
                 })
             })
         }
 
     handleLogOut = () => {
         this.setState({
-            user: {
                 name: '',
                 email: '',
                 password: '',
                 isLoggedIn: false
-            }
         })
         localStorage.clear();
     }
@@ -128,29 +143,21 @@ class App extends React.Component{
         return(
             <div>
                 <BrowserRouter>
-                    {/* <nav>
-                        <Link to="/low-maintenance">Low Maintenance</Link>
-                        {plantCat.map((plantCat) => {
-                            return (
-                            <Link to={`/${plantCat}`}>{plantCat}</Link>
-                            )
-                        })}
-                    </nav> */}
-                    {this.state.user &&
-                    <Header user={this.state.user}/>
+                    {this.state &&
+                    <Header user={this.state}/>
                     }
                     <Switch>
-                        {this.state.user &&
+                        {this.state &&
                         <Route path='/login'
                             render={() => {
-                                return <UserLogin user={this.state.user} handleLogIn={this.handleLogIn}/>
+                                return <UserLogin user={this.state} handleLogIn={this.handleLogIn}/>
                             }}
                         />
                         }
 
-                        {this.state.user && <Route path='/newuser' 
-                            render={() => {
-                                return <NewUser handleSignUp={this.handleSignUp}/>
+                        {this.state && <Route path='/signup' 
+                            render={(props) => {
+                                return <NewUser handleSignUp={this.handleSignUp} handleFormInput={this.handleFormInput}/>
                         }}
                         />
                         }

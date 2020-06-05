@@ -9,13 +9,13 @@ const User = mongoose.model('User');
 router.post('/signup', (req, res) => {
     if (req.body.email && req.body.password) {
         let newUser = {
+            name: req.body.name,
             email: req.body.email,
             password: req.body.password,
-            name: req.body.name,
             shippingStreet: req.body.shippingStreet,
             shippingCity: req.body.shippingCity,
             shippingState: req.body.shippingState,
-            shippingZip: req.body.shippingZip,
+            shippingZip: req.body.shippingZip
         }
         User.findOne({email: req.body.email})
             .then((user) => {
