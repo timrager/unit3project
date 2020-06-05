@@ -7,7 +7,7 @@ class CatCard extends React.Component {
         }
         return (
             <div className="plantBox">
-                <Link to={`/${category}`} ><img className="plantMenu" src={image} /></Link>
+                <Link to={`/${category}`} ><img className="plantImage" src={image} /></Link>
                 <h3>{fixCat(category)}</h3>
             </div>
         )
