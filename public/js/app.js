@@ -18,7 +18,7 @@ const plantCat = [
         category: 'air-purifying',
         image: 'https://images-na.ssl-images-amazon.com/images/I/61gpcJHlfIL._AC_SX466_.jpg'
     }
-]
+];
 
 class App extends React.Component{
 
@@ -123,17 +123,10 @@ class App extends React.Component{
     }
 
     render() {
+        console.log(plantCat)
         return(
             <div>
                 <BrowserRouter>
-                    {/* <nav>
-                        <Link to="/low-maintenance">Low Maintenance</Link>
-                        {plantCat.map((plantCat) => {
-                            return (
-                            <Link to={`/${plantCat}`}>{plantCat}</Link>
-                            )
-                        })}
-                    </nav> */}
                     {this.state.user &&
                     <Header user={this.state.user}/>
                     }
@@ -170,7 +163,7 @@ class App extends React.Component{
                                 <Route path={`/${catName.category}`} 
                                 render={(props) => {
                                     return (
-                                        <PlantCategory props={plantData} />
+                                        <PlantCategory plantData={plantData} user={this.state.user}/>
                                     )
                                 }}
                                 />

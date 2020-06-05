@@ -15,11 +15,10 @@ const userSchema = new mongoose.Schema({
     shippingState: String,
     shippingZip: Number,
     creditCard: Number,
-    faveList: [
+    shoppingCart: [
         {
-            name: String,
-            image: String,
-            id: String
+            plant: Object,
+            number: Number
         }
     ]
 });
