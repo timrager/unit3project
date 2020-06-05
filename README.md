@@ -35,7 +35,7 @@
 ![Main Index View](images/Index_View.png)
 
 ### Category-Filtered Product View:
-![Category Product Page](images/Filtered_View.png)
+[[/images/Filtered_View.png|Category Product Page]]
 
 ### Individual Product View:
 ![Main Index View](images/Product_View.png)
