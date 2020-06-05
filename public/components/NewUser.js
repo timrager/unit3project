@@ -5,42 +5,20 @@ class NewUser extends React.Component {
         name: '',
         shippingStreet: '',
         shippingCity: '',
-        shippingZip: ''
-    }
-    
-    updateEmail = (event) => {
-        this.setState({
-            email: event.target.value
-        })
-    }
-
-    updatePassword = (event) => {
-        this.setState({
-            password: event.target.value
-        })
+        shippingZip: '',
+        errors: {
+            name: '',
+            email: '',
+            password: '',
+        }
     }
 
-    updateName = (event) => {
-        this.setState({
-            name: event.target.value
-        })
-    }
+    handleChange = (event) =>{
+        event.preventDefault();
 
-    updateShippingStreet = (event) => {
-        this.setState({
-            shippingStreet: event.target.value
-        })
-    }
 
-    updateShippingCity= (event) => {
         this.setState({
-            shippingCity: event.target.value
-        })
-    }
-
-    updateShippingZip= (event) => {
-        this.setState({
-            shippingZip: event.target.value
+            [event.target.id]: event.target.value
         })
     }
 
