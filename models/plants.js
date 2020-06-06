@@ -9,6 +9,7 @@ const mongoose = require('mongoose');
 const plantsSchema = new mongoose.Schema({
     name: String,
     category: String,
+    type: String,
     image: String,
     size: String,
     petFriendly: Boolean,

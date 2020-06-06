@@ -1,4 +1,3 @@
-// import { BrowserRouter, Route, Link } from "react-router-dom";
 const { BrowserRouter, Link, Switch, Route } = ReactRouterDOM;
 
 const plantCat = [
@@ -18,7 +17,7 @@ const plantCat = [
         category: 'air-purifying',
         image: 'https://images-na.ssl-images-amazon.com/images/I/61gpcJHlfIL._AC_SX466_.jpg'
     }
-]
+];
 
 class App extends React.Component{
 
@@ -27,7 +26,8 @@ class App extends React.Component{
             name: '',
             email: '',
             password: '',
-            isLoggedIn: false
+            isLoggedIn: false,
+            shoppingCart: []
         },
         plants: []
     }
@@ -101,12 +101,17 @@ class App extends React.Component{
                 this.setState({
                     user: {
                         isLoggedIn: true,
-                        email: '',
-                        password: ''
+                        shoppingCart: response.user.shoppingCart,
+                        email: response.user.email,
+                        password: response.user.password,
+                        name: response.user.name,
+                        shippingStreet: response.user.shippingStreet,
+                        shippingCity: response.user.shippingCity,
+                        shippingState: response.user.shippingState,
+                        shippingZip: response.user.shippingZip
                     }
                 })
             })
-        
         
     }
 
@@ -117,17 +122,10 @@ class App extends React.Component{
     }
 
     render() {
+        console.log(plantCat)
         return(
             <div>
                 <BrowserRouter>
-                    {/* <nav>
-                        <Link to="/low-maintenance">Low Maintenance</Link>
-                        {plantCat.map((plantCat) => {
-                            return (
-                            <Link to={`/${plantCat}`}>{plantCat}</Link>
-                            )
-                        })}
-                    </nav> */}
                     {this.state.user &&
                     <Header user={this.state.user}/>
                     }
@@ -140,7 +138,7 @@ class App extends React.Component{
                         />
                         }
 
-                        {this.state.user && <Route path='/newuser' 
+                        {this.state.user && <Route path='/user/signup' 
                             render={() => {
                                 return <NewUser handleSignUp={this.handleSignUp}/>
                         }}
@@ -164,7 +162,7 @@ class App extends React.Component{
                                 <Route path={`/${catName.category}`} 
                                 render={(props) => {
                                     return (
-                                        <PlantCategory plantData={plantData}  />
+                                        <PlantCategory plantData={plantData} user={this.state.user}  />
                                     )
                                 }}
                                 />
@@ -186,11 +184,11 @@ class App extends React.Component{
                             />
                         }
 
-                        <Route path="/"
+                        {this.state.user && <Route path="/"
                             render={() => {
-                                return <Home plantCat={plantCat} />
+                                return <Home plantCat={plantCat} user={this.state.user}/>
                             }}
-                        />
+                        />}
                     </Switch>
                     <Footer />
                 </BrowserRouter>
