@@ -23,7 +23,7 @@ class PlantCategory extends React.Component {
                 {this.props.plantData.map((plant) => {
                     return (
                         <div className="plantBox">
-                        <h1>{plant.name}</h1>
+                        <h2>{plant.name}</h2>
                         <Link to={`/${plant._id}`}plant={plant} ><img className="plantImage" src={plant.image} /></Link>
                         <p>{plant.plantCare.water}</p>
                         <p>{plant.plantCare.sun}</p>

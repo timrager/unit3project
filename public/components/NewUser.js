@@ -61,7 +61,7 @@ class NewUser extends React.Component {
     return(
         <div className="newUserForm">
             <form onSubmit={this.createUser}>
-                <h2>Create a Profile</h2>
+                <h1>Create a Profile</h1>
                 <label htmlFor="name">Name</label>
                     <input type="text" id="name" value={this.name} onChange={this.handleChange} />
                 <label htmlFor="email">Email</label>    

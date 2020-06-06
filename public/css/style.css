@@ -98,11 +98,14 @@ h1 {
     border: 5px solid #234154;
     width: 40vw;
     margin: 10px;
+    float: left;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
 .plantMenu {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     height: relative;
@@ -110,13 +113,14 @@ h1 {
     color: black;
     font-size: 4vw;
     font-weight: bold;
-    
 }
 
 .plantImage {
     margin: 5px;
     border-radius: 5px;
+    height: 30vw;
     width: 30vw;
+    position: relative;
     display: flex;
     justify-content: space-around;
 
@@ -127,10 +131,31 @@ h1 {
     color: #FCF4ED;
 }
 
+.showPage {
+    display: flex;
+    flex-direction: row;
+}
+
 #image-div {
     float: left;
     width: 50%;
-    size: 50px;
+    /* size: 50px; */
+}
+
+#info-div {
+    float: right;
+}
+
+#profile {
+    float: left;
+    width: 45%;
+    margin: 5px;
+}
+
+#cart {
+    float: right;
+    width: 45%;
+    margin: 5px;
 }
 
 
@@ -141,28 +166,35 @@ h1 {
 .userLoginForm {
     background-color: #96ACB5;
     color: #A35103;
+    width: 90%;
+    justify-content: center;
+    margin: 10px;
 }
 
 .userLoginForm > form {
     text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: left;
+    justify-content: center;
     align-items: center;
-    padding: 200px;
+    padding: 100px;
     max-height: 50vh;
+    width: 90%;
 }
 
 .userLoginForm, .newUserForm > h2 {
     font-size: 40px;
     text-align: center;
+    justify-content: center;
+    width: 90%;
 }
 
 .newUserForm {
-    background-color: #A35103;
-    color: black;
-    width: 50vw;
+    background-color: #234154;
+    color: #96ACB5;
+    width: 80vw;
     min-height: 50vh;
+    margin: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -171,6 +203,7 @@ h1 {
 }
 
 input[type=text], input[type=password] {
+    width: 75vw;
     padding: 10px;
     padding-left: 10px;
     padding-right: 10px;
@@ -184,11 +217,20 @@ label {
 
 input[type=submit] {
     padding: 20px;
+    width: 60vw;
 }
 
 .userLoginForm > button {
     padding: 20px;
     font-size: 20px;
+}
+
+#email {
+    width: 60vw;
+}
+
+#password {
+    width: 60vw;
 }
 
 /*=================================

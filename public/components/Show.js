@@ -18,8 +18,8 @@ class Show extends React.Component {
         // const {name, image, plantCare, size} = this.props.singlePlant;
         // console.log(this.props.user.shoppingCart);
         return (
-            <div>
-                <div className="plantImage">
+            <div className="showPage">
+                <div className="plantImage" id="image-div">
                     <img src={this.props.singlePlant.image} />
                 </div>
                 <div id="info-div">
@@ -29,7 +29,7 @@ class Show extends React.Component {
                     <p>{this.props.singlePlant.plantCare.sun}</p>
                     <h3>Plant Size</h3>
                     <p>{this.props.singlePlant.size}</p>
-                    <button onClick={() => this.addToCart(this.props.singlePlant)}>Add to Cart!</button>
+                    <button className="addToCart" onClick={() => this.addToCart(this.props.singlePlant)}>Add to Cart!</button>
                 </div>
             </div>
         )
