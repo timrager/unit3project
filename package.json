@@ -1,6 +1,9 @@
 {
   "name": "unit3project",
   "version": "1.0.0",
+  "engines": {
+    "node": "13.8.0"
+  },
   "description": "Oxygen",
   "main": "server.js",
   "scripts": {
@@ -26,6 +29,8 @@
     "mongoose": "^5.9.16",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
-    "react-axios": "^2.0.3"
+    "react": "^16.13.1",
+    "react-axios": "^2.0.3",
+    "react-router-dom": "^5.2.0"
   }
 }

@@ -1,10 +1,24 @@
+/* reference :
+orange - #A35103;
+dark blue - #234154;
+light blue - #96ACB5;
+background - #FCF4ED; 
+*/
+
 * {
     margin: 0em;
+    width: 100%;
 }
 
 body {
     background-color: #FCF4ED;
-    color: black
+    color: black;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 header {
@@ -12,6 +26,8 @@ header {
     color: #96ACB5;
     display: flex;
     flex-direction: row;  
+    justify-content: center;
+    width: 100%;
 }
 
 footer {
@@ -21,6 +37,7 @@ footer {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    height: 20vh;
 }
 
 a {
@@ -28,11 +45,37 @@ a {
     text-decoration: none;
 }
 
+h1 {
+    color: #A35103;
+    justify-content: center;
+    
+}
+
+#logo {
+    font-family: 'Aladin', cursive;
+    display: flex;
+    align-content: stretch;
+    width: 90%;
+    align-items: baseline;
+    font-size: 20px;
+    margin: 2px;
+}
+
+.container {
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 .buttonContainer {
-    float: right;
+    /* float: right; */
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: right;
+    width: 100%;
 }
 
 .headerButton {
@@ -46,15 +89,153 @@ a {
     cursor: pointer;
 }
 
-.plant {
-    border: 5px solid #A35103;
-    /* background-image: url(TO BE ADDED); */
+.plantBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #A35103;
+    border: 5px solid #234154;
+    width: 40vw;
+    margin: 10px;
+    float: left;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
-.plant:hover {
-    background-color: #fcf4ed;
-    color: black
+.plantMenu {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: relative;
+    width: 30vw;
+    color: black;
+    font-size: 4vw;
+    font-weight: bold;
 }
+
+.plantImage {
+    margin: 5px;
+    border-radius: 5px;
+    height: 30vw;
+    width: 30vw;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.addToCart {
+    background-color: #234154;
+    color: #FCF4ED;
+}
+
+.showPage {
+    display: flex;
+    flex-direction: row;
+}
+
+#image-div {
+    float: left;
+    width: 50%;
+    /* size: 50px; */
+}
+
+#info-div {
+    float: right;
+}
+
+#profile {
+    float: left;
+    width: 45%;
+    margin: 5px;
+}
+
+#cart {
+    float: right;
+    width: 45%;
+    margin: 5px;
+}
+
+
+/*=================================
+****** LOGIN / CREATE PROFILE FORMS
+==================================*/
+
+.userLoginForm {
+    background-color: #96ACB5;
+    color: #A35103;
+    width: 90%;
+    justify-content: center;
+    margin: 10px;
+}
+
+.userLoginForm > form {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px;
+    max-height: 50vh;
+    width: 90%;
+}
+
+.userLoginForm, .newUserForm > h2 {
+    font-size: 40px;
+    text-align: center;
+    justify-content: center;
+    width: 90%;
+}
+
+.newUserForm {
+    background-color: #234154;
+    color: #96ACB5;
+    width: 80vw;
+    min-height: 50vh;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+input[type=text], input[type=password] {
+    width: 75vw;
+    padding: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 20px;
+}
+
+label {
+    font-size: 30px;
+    font-family: 'Cambria', serif;
+}
+
+input[type=submit] {
+    padding: 20px;
+    width: 60vw;
+}
+
+.userLoginForm > button {
+    padding: 20px;
+    font-size: 20px;
+}
+
+#email {
+    width: 60vw;
+}
+
+#password {
+    width: 60vw;
+}
+
+/*=================================
+****** FOOTER
+==================================*/
 
 .socialMedia {
     display: flex;
@@ -62,10 +243,6 @@ a {
     justify-content: flex-end;
     align-items: baseline;
 }
-/* ============= */
-/* FOOTER STYLES */
-/* ============= */
-/* Footer div was given the className="footer" */
 
 .footer {
     background-color: #234154;

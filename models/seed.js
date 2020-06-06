@@ -1,31 +1,7 @@
-//=======================
-// DEPENDENCIES
-//=======================
-const express = require('express');
-const router = express.Router();
-
-//=======================
-// MODELS
-//=======================
-const Plants = require('../models/plants.js');
-const User = require('../models/user.js');
-
-//=======================
-// ROUTES
-//=======================
-// GET
-router.get('/', (req,res) => {
-    Plants.find( {}, (err, foundPlants) => {
-        res.json(foundPlants);
-    })
-})
-
-router.get('/seed', (req, res) => {
-    Plants.create([
+const plants = [
     {
         name: "Burro's Tail",
         category: 'Low Maintenance',
-        type: 'succulent',
         image: 'https://cdn.shopify.com/s/files/1/2198/4603/files/IMG_4268_1024x1024.JPG?v=1563762901',
         size: '3 feet',
         petFriendly: false,
@@ -37,7 +13,6 @@ router.get('/seed', (req, res) => {
     {
         name: 'Hens-and-Chicks',
         category: 'Low Maintenance',
-        type: 'succulent',
         image: 'https://www.thespruce.com/thmb/qrWRABcI6K_plsLUn2cX8WS_-QE=/2358x1613/filters:fill(auto,1)/kararileysempervivum-18-crop-565dd32562e34681a627e2de84f691e1.jpg',
         size: '.5 feet',
         petFriendly: false,
@@ -223,36 +198,4 @@ router.get('/seed', (req, res) => {
             sun: 'direct sunlight'
         }
     },
-]),
-    res.send('Hello World')
-});
-
-router.get('/', (req, res) => {
-    plants.find({ category: succulent }, (err, foundPlants) => {
-        res.json(foundPlants);
-    })
-})
-
-// POST
-router.post('/', (req, res) => {
-    User.create(req.body, (error, createdUser) => {
-        res.json(createdUser);
-    });
-})
-
-// DESTROY
-router.delete('/:id', (req, res) => {
-    Plants.find(req.params.id, (error, deletedPlant) => {
-        res.json(deletedPlant);
-        console.log('deleted plants')
-    })
-})
-
-// UPDATE
-router.put('/:id', (req, res) => {
-    User.findByIdAndUpdate(req.params.id, req.body, (error, updatedUser) => {
-        res.json(updatedUser);
-    })
-});
-
-module.exports = router;
+]
