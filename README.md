@@ -27,8 +27,7 @@
 - The user should be able to delete plants from their shopping cart if they find they no longer want them
 - The user should be able to learn more about the plant they want to purchase so they can take care of it properly
 - The user should be able to easily click a button to add items to their cart to save them for checkout
-- The user should be able to see their history of past purchases
-- Future Consideration: As a user I can flag my favorite plants to be stored in my profile for easy access
+
 
 ## Wireframing
 ### Main Index View:
@@ -47,3 +46,7 @@
 ![visual & color design](/public/images/visualDesign.png)
 
 ## Challenges / Future Goals
+- Functionality to add multiple of one specific plant to your cart
+- Allowing the user to flag my favorite plants to be stored in my profile for easy access
+- Enabling the user should be able to see their history of past purchases
+- Incorporate a third party API

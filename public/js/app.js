@@ -178,7 +178,7 @@ class App extends React.Component{
                                         return plant._id === newId;
                                     })
                                     return (
-                                        <Show singlePlant={singlePlant} />
+                                        <Show singlePlant={singlePlant} user={this.state.user}/>
                                     )
                                 }}
                             />
