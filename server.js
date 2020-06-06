@@ -31,6 +31,7 @@ app.use('/oxygen', plantsController)
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true })
 mongoose.connection.on('error', (error) => console.log(error.message));
 mongoose.connection.on('disconnected', () => console.log('mongo disconnected'));
+mongoose.connection.on('open', ()=>{});
 
 //=======================
 // LISTENING
