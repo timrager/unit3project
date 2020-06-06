@@ -22,12 +22,12 @@ class PlantCategory extends React.Component {
             <div className="plantCat">
                 {this.props.plantData.map((plant) => {
                     return (
-                        <div>
-                        <h1>{plant.name}</h1>
-                        <Link to={`/${plant._id}`}plant={plant} ><img className="plantMenu" src={plant.image} /></Link>
+                        <div className="plantBox">
+                        <h2>{plant.name}</h2>
+                        <Link to={`/${plant._id}`}plant={plant} ><img className="plantImage" src={plant.image} /></Link>
                         <p>{plant.plantCare.water}</p>
                         <p>{plant.plantCare.sun}</p>
-                        <button onClick={() => this.addToCart(plant)}>Add to Cart!</button>
+                        <button className="addToCart" onClick={() => this.addToCart(plant)}>Add to Cart!</button>
                         </div>
                         )
                 })}

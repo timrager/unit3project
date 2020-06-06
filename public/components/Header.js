@@ -12,7 +12,9 @@ class Header extends React.Component{
 
         return(
             <header>
-                <div id="logo">Oxygen</div>
+                <div id="logo">
+                    <h2>Oxygen</h2>
+                    </div>
                 <div className="buttonContainer">
                     {welcomeUser}
                     <button id="cart" className="headerButton"><Link to="/userProfile" >Cart</Link></button>

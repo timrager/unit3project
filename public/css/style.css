@@ -7,11 +7,18 @@ background - #FCF4ED;
 
 * {
     margin: 0em;
+    width: 100%;
 }
 
 body {
     background-color: #FCF4ED;
-    color: black
+    color: black;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 header {
@@ -19,6 +26,8 @@ header {
     color: #96ACB5;
     display: flex;
     flex-direction: row;  
+    justify-content: center;
+    width: 100%;
 }
 
 footer {
@@ -43,10 +52,22 @@ h1 {
 }
 
 #logo {
+    font-family: 'Aladin', cursive;
     display: flex;
     align-content: stretch;
     width: 90%;
     align-items: baseline;
+    font-size: 20px;
+    margin: 2px;
+}
+
+.container {
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .buttonContainer {
@@ -54,6 +75,7 @@ h1 {
     display: flex;
     flex-direction: row;
     justify-content: right;
+    width: 100%;
 }
 
 .headerButton {
@@ -70,11 +92,20 @@ h1 {
 .plantBox {
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #A35103;
+    border: 5px solid #234154;
+    width: 40vw;
+    margin: 10px;
+    float: left;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
 .plantMenu {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     height: relative;
@@ -84,51 +115,86 @@ h1 {
     font-weight: bold;
 }
 
+.plantImage {
+    margin: 5px;
+    border-radius: 5px;
+    height: 30vw;
+    width: 30vw;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
 
-.plant {
-    padding: 8vh;
-    border: 5px solid #A35103;
-    /* background-image: url(TO BE ADDED); */
 }
 
-.plant:hover {
-    background-color: #fcf4ed;
-    color: black
+.addToCart {
+    background-color: #234154;
+    color: #FCF4ED;
 }
 
-#pet {
-    /* background-image: image(../images/calathea_homescreen.jpg); */
+.showPage {
+    display: flex;
+    flex-direction: row;
 }
+
+#image-div {
+    float: left;
+    width: 50%;
+    /* size: 50px; */
+}
+
+#info-div {
+    float: right;
+}
+
+#profile {
+    float: left;
+    width: 45%;
+    margin: 5px;
+}
+
+#cart {
+    float: right;
+    width: 45%;
+    margin: 5px;
+}
+
 
 /*=================================
 ****** LOGIN / CREATE PROFILE FORMS
 ==================================*/
 
 .userLoginForm {
-    background-color: #A35103;
-    color: #96ACB5;
+    background-color: #96ACB5;
+    color: #A35103;
+    width: 90%;
+    justify-content: center;
+    margin: 10px;
 }
 
 .userLoginForm > form {
     text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: left;
+    justify-content: center;
     align-items: center;
-    padding: 200px;
+    padding: 100px;
     max-height: 50vh;
+    width: 90%;
 }
 
 .userLoginForm, .newUserForm > h2 {
     font-size: 40px;
     text-align: center;
+    justify-content: center;
+    width: 90%;
 }
 
 .newUserForm {
-    background-color: #A35103;
-    color: black;
-    width: 50vw;
+    background-color: #234154;
+    color: #96ACB5;
+    width: 80vw;
     min-height: 50vh;
+    margin: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -137,6 +203,7 @@ h1 {
 }
 
 input[type=text], input[type=password] {
+    width: 75vw;
     padding: 10px;
     padding-left: 10px;
     padding-right: 10px;
@@ -150,11 +217,20 @@ label {
 
 input[type=submit] {
     padding: 20px;
+    width: 60vw;
 }
 
 .userLoginForm > button {
     padding: 20px;
     font-size: 20px;
+}
+
+#email {
+    width: 60vw;
+}
+
+#password {
+    width: 60vw;
 }
 
 /*=================================
